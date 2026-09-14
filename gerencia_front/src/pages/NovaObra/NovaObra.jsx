@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./NovaObra.css";
 import LinhaObra from "./components/LinhaObra/LinhaObra.jsx";
 import api from "../../services/api.js";

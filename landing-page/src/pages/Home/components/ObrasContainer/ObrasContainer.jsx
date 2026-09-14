@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, Fragment } from "react";
 import "./ObrasContainer.css";
 import mockObras from "../../../../data/mockObras";
 import Card from "../../../../components/Card/Card.jsx";
@@ -83,7 +83,7 @@ function ObrasContainer() {
               { id: "radioGravura", value: "gravura", label: "Gravura" },
               { id: "radioDesenho", value: "desenho", label: "Desenho" },
             ].map((cat) => (
-              <React.Fragment key={cat.id}>
+              <Fragment key={cat.id}>
                 <input
                   type="radio"
                   className="btn-check"
@@ -99,7 +99,7 @@ function ObrasContainer() {
                 >
                   {cat.label}
                 </label>
-              </React.Fragment>
+              </Fragment>
             ))}
           </div>
 

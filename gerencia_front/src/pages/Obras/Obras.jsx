@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Obras.css";
 import api from "../../services/api";

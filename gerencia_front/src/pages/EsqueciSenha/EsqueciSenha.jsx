@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./EsqueciSenha.css";
 import { toast } from "react-toastify";
 import api from "../../services/api";

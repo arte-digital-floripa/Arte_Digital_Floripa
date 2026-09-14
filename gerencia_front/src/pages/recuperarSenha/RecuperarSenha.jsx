@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, useSearchParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../services/api";
 import "./RecuperarSenha.css";

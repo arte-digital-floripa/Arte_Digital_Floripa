@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Navbar.css";
@@ -21,7 +20,8 @@ function Navbar() {
           <div className="justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item collapse navbar-collapse">
-                <a id="btn_obras" className=" btn btn-dark" href="/obras">
+                {/* TODO (Etapa 02): Avaliar criar rota /obras (Opcao B) */}
+                <a id="btn_obras" className=" btn btn-dark" href="/">
                   Obras
                 </a>
               </li>
