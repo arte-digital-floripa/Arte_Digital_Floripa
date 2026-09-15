@@ -7,33 +7,15 @@ Transformar um conjunto de fotos físicas ou esparsas em um repositório digital
 
 ---
 
-## 👥 Equipe e Responsabilidades
-
-### **Gerenciamento de Projeto**
-* **Líder do Projeto:** Helena de Souza Mieldazis (@lenasm0)
-* **Vice-Líder do Projeto:** Leonardo João Fleith (@LeonardoKako)
-
-### **Front-end (UI/UX & Web)**
-* **Responsável:** Leonardo João Fleith
-* **Desenvolvedores:** [Nome dos Integrantes do Front]
-* **UI/UX Design:** [Nome de quem fará o protótipo/design]
-
-### **Back-end & Banco de Dados**
-* **Responsável:** Helena de Souza Mieldazis
-* **Desenvolvedores:** [Nome dos Integrantes do Back]
-* **DB Architect:** [Nome de quem cuidará da modelagem de dados]
-
----
-
 ## 🛠 Tecnologias (Stack)
 *As tecnologias abaixo estão em fase de definição pela equipe técnica.*
 
 | Camada | Tecnologia Sugerida |
 | :--- | :--- |
-| **Front-end** | *A definir* (Ex: React / Next.js) |
-| **Back-end** | *A definir* (Ex: Node.js / NestJS) |
-| **Banco de Dados** | *A definir* (Ex: PostgreSQL / MongoDB) |
-| **Hospedagem de Fotos** | *A definir* (Ex: Cloudinary / AWS S3) |
+| **Front-end** | React + Javascript |
+| **Back-end** | Node.js + Javascript |
+| **Banco de Dados** | Supabase |
+| **Hospedagem de Fotos** | Supabase |
 
 ---
 
@@ -50,7 +32,7 @@ Para evitar conflitos e perda de código, o fluxo de trabalho é obrigatório:
 * **NUNCA** abra um Pull Request (PR) diretamente para a `main` ou para a `development`.
 * Toda nova tarefa deve nascer de uma branch `feat/` criada a partir da branch da sua equipe (`frontend` ou `backend`).
 * Ao finalizar, abra o PR para a branch da sua equipe (Ex: `feat/botão` -> `frontend`).
-* O merge final para `development` e `main` será feito exclusivamente pelo **Leonardo** ou pela **Helena**.
+* Qualquer dúvida, pergunte ao **Leonardo**.
 
 > **Nota:** Pull Requests fora do padrão ou para as branches erradas serão fechados sem aviso.
 
