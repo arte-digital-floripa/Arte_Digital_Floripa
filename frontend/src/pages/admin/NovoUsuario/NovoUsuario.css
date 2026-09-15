@@ -1,0 +1,27 @@
+#titulo {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  color: #000000;
+  margin: 0%;
+}
+
+#sub_titulo {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  opacity: 0.5;
+  margin-bottom: 50px;
+}
+
+#email_es {
+  width: 757px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: #ebebeb;
+  font-family: "Inter";
+  color: black;
+  margin-bottom: 60px;
+}

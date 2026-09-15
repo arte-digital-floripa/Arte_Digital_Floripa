@@ -1,0 +1,47 @@
+#linha_thumb {
+  width: 90px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+#linha_nome {
+  font-weight: 600;
+  color: #111827;
+}
+
+#linha_artista,
+#linha_ano,
+#linha_categoria {
+  font-family: "Inter", sans-serif;
+  color: #4b5563;
+}
+
+#acoes_container {
+  gap: 8px;
+}
+
+#acoes_container .btn {
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#acoes_container .btn:hover {
+  background-color: #f9fafb;
+  border-color: #cbd5e1;
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+#acoes_container .btn svg {
+  width: 18px;
+  height: 18px;
+}

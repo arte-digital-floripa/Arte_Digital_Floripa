@@ -1,0 +1,154 @@
+#main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.btn-back-custom {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  width: 50px;
+  height: 50px;
+}
+
+.btn-back-custom:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#voltar {
+  width: 20px;
+  height: 20px;
+}
+
+.detail-hero-section {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  margin: 20px 0 40px 0;
+  background-color: #f3f4f6;
+  max-height: 550px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+#imagem {
+  width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  display: block;
+}
+
+#info_container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.badge-categoria {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+#titulo {
+  font-family: "Inter", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.03em;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  line-height: 120%;
+}
+
+#autor {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+#info_tecnica {
+  margin-top: 30px;
+  width: 100%;
+}
+
+#ano, #tecnica {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  flex: 1;
+}
+
+.info-label {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+}
+
+#descricao_container {
+  background-color: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+#descricao_container h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0;
+}
+
+#descricao {
+  font-size: 16px;
+  line-height: 170%;
+  color: #4b5563;
+}
+
+@media (max-width: 768px) {
+  #titulo {
+    font-size: 28px;
+  }
+  
+  #autor {
+    font-size: 18px;
+  }
+
+  .detail-hero-section {
+    border-radius: 16px;
+    margin-bottom: 25px;
+  }
+  
+  #descricao_container {
+    padding: 20px;
+  }
+}
