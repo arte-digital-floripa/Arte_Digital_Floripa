@@ -24,9 +24,7 @@ Transformar um conjunto de fotos físicas ou esparsas em um repositório digital
 Para evitar conflitos e perda de código, o fluxo de trabalho é obrigatório:
 
 1. **`main`**: RESERVADA. Apenas os líderes realizam merges aqui.
-2. **`development`**: RESERVADA. Branch de união final. **Nunca abra PR para esta branch.**
-3. **`frontend`**: Branch base para o time de Front. **PRs devem ser abertos para cá.**
-4. **`backend`**: Branch base para o time de Back. **PRs devem ser abertos para cá.**
+2. **`develop`**: RESERVADA. Branch de união final. **Nunca abra PR para esta branch.**
 
 ### ⚠️ Regras para Desenvolvedores:
 * **NUNCA** abra um Pull Request (PR) diretamente para a `main` ou para a `development`.
