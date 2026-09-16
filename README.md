@@ -1,4 +1,4 @@
-# 📸 Arte Digital Floripa
+# 📸 Arte Digital Floripa.
 
 O **Arte Digital Floripa** é um acervo digital online projetado para curadoria e exibição de registros fotográficos. O sistema permite que usuários autenticados realizem o upload de imagens, organizando-as em uma galeria pública e acessível, preservando a memória visual da cidade.
 
