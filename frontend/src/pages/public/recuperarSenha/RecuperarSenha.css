@@ -1,0 +1,63 @@
+#titulo {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  color: #000000;
+  margin: 0%;
+}
+
+#sub_titulo {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  opacity: 0.5;
+  margin-bottom: 50px;
+}
+
+#nome,
+#email,
+#senha,
+#confirmar_senha {
+  width: 757px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: #ebebeb;
+  font-family: "Inter";
+  color: black;
+  margin-bottom: 25px;
+}
+
+#enviar_btn {
+  font-family: "Inter";
+  width: 757px;
+  height: 70px;
+  font-size: 40px;
+  line-height: 35px;
+  border-radius: 16px;
+  background-color: #c1baba;
+  color: black;
+}
+
+#enviar_btn:hover {
+  background-color: #888383;
+}
+
+#enviar_btn:hover {
+  background-color: #979292;
+}
+
+#login_p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  color: #000000;
+  opacity: 0.5;
+  margin-top: 50px;
+}
+
+#login_link {
+  text-decoration: none;
+}

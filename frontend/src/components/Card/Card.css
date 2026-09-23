@@ -1,0 +1,86 @@
+.card-custom {
+  width: 310px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.card-custom:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-custom:hover .card-image {
+  transform: scale(1.06);
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title-custom {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+  line-height: 140%;
+  font-family: "Inter", sans-serif;
+}
+
+.card-desc-custom {
+  font-size: 14px;
+  line-height: 150%;
+  color: #6b7280;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-family: "Inter", sans-serif;
+}
+
+.card-btn-custom {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d4af37; /* bronze/gold accent */
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-top: auto;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.card-btn-custom svg {
+  transition: transform 0.2s ease;
+}
+
+.card-btn-custom:hover {
+  color: #bfa030;
+}
+
+.card-btn-custom:hover svg {
+  transform: translateX(4px);
+}
