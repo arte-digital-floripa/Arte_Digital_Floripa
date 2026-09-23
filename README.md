@@ -39,20 +39,17 @@ Transformar um conjunto de fotos físicas ou esparsas em um repositório digital
 
 ## Fluxo de Trabalho (Git) - LEIA COM ATENÇÃO
 
-Para evitar conflitos e perda de código, o fluxo de trabalho é obrigatório:
+Para manter a organização e a agilidade da equipe, adotamos o seguinte fluxo:
 
-1. **`main`**: RESERVADA. Apenas os líderes realizam merges aqui.
-2. **`development`**: RESERVADA. Branch de união final. **Nunca abra PR para esta branch.**
-3. **`frontend`**: Branch base para o time de Front. **PRs devem ser abertos para cá.**
-4. **`backend`**: Branch base para o time de Back. **PRs devem ser abertos para cá.**
+1. **`main`**: RESERVADA para Produção. Pull Requests e merges para esta branch exigem, obrigatoriamente, a aprovação do administrador do repositório.
+2. **`develop`**: Branch de Integração Contínua. Totalmente livre para a equipe. É aqui que o código de todos se encontra.
 
 ### Regras para Desenvolvedores:
-* **NUNCA** abra um Pull Request (PR) diretamente para a `main` ou para a `development`.
-* Toda nova tarefa deve nascer de uma branch `feat/` criada a partir da branch da sua equipe (`frontend` ou `backend`).
-* Ao finalizar, abra o PR para a branch da sua equipe (Ex: `feat/botão` -> `frontend`).
-* O merge final para `development` e `main` será feito exclusivamente pelo **Leonardo** ou pela **Helena**.
-
-> **Nota:** Pull Requests fora do padrão ou para as branches erradas serão fechados sem aviso.
+* Toda nova tarefa deve nascer em uma nova branch criada a partir da `develop` (Exemplo: `feat/novo-botao`).
+* Ao finalizar sua demanda, abra o Pull Request (PR) apontando para a branch **`develop`**.
+* A própria pessoa desenvolvedora está liberada para fazer o merge do seu PR na `develop`, evitando que o fluxo de trabalho fique travado.
+* **NUNCA** abra um Pull Request diretamente para a branch `main`.
+* Qualquer dúvida, pergunte ao **Leonardo**.
 
 ---
 *Projeto desenvolvido para fins acadêmicos - Unicesusc - 2026*
