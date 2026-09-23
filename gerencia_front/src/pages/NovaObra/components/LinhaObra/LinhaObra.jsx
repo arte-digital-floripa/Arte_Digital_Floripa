@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./LinhaObra.css";
 import { Link } from "react-router-dom";
 import api from "../../../../services/api";
