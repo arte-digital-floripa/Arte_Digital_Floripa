@@ -70,7 +70,6 @@ function Cadastro() {
         nome: nome,
         senha: senha,
       });
-      console.log("Cadastro completado com sucesso:", response.data);
       toast.success("Cadastro concluído com sucesso!", {
         position: "top-center",
         autoClose: 5000,
