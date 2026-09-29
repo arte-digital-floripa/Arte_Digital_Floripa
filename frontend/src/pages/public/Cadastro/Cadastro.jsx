@@ -17,7 +17,6 @@ function Cadastro() {
   });
 
   const tempToken = searchParams.get("token");
-  console.log(tempToken)
 
   const navigate = useNavigate();
 
@@ -25,15 +24,12 @@ function Cadastro() {
 
   function handleNome(e) {
     setNome(e.target.value);
-    console.log(nome);
   }
   function handleSenha(e) {
     setSenha(e.target.value);
-    console.log(senha);
   }
   function handleConfirmarSenha(e) {
     setConfirmarSenha(e.target.value);
-    console.log(confirmarSenha);
   }
 
   // enviar
@@ -89,7 +85,7 @@ function Cadastro() {
       navigate('/')
 
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 
