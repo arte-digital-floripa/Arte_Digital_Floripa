@@ -55,6 +55,13 @@ function LinhaObra({
       const urlTemp = URL.createObjectURL(blob);
 
       setImagemUrl(urlTemp);
+
+      // limpar da memoria para evitar memory leak
+
+      return () => {
+        URL.revokeObjectURL(urlTemp);
+      };
+
     }
   }, [arquivoBytes]);
 
