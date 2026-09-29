@@ -7,7 +7,7 @@ function Navbar() {
     <>
       <nav id="nav_container" className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <div className="d-flex align-items-center">
               <img
                 src="/img/logo.png"
@@ -16,14 +16,14 @@ function Navbar() {
               />
               <h1 className="titulo">Acervo Franklin Cascaes</h1>
             </div>
-          </a>
+          </Link>
           <div className="justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item collapse navbar-collapse">
                 {/* TODO (Etapa 02): Avaliar criar rota /obras (Opcao B) */}
-                <a id="btn_obras" className=" btn btn-dark" href="/">
+                <Link id="btn_obras" className=" btn btn-dark" to="/">
                   Obras
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <img
