@@ -46,6 +46,7 @@ function RecuperarSenha() {
         progress: undefined,
         theme: "light",
       });
+      return;
     }
 
     if (!senha || !confirmarSenha) {
