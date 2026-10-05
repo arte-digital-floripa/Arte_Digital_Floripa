@@ -49,7 +49,7 @@ function Obras() {
     <>
       <div id="main-container" className="d-flex flex-column animate-fadeIn">
         <div className="container-fluid d-flex justify-content-start my-3">
-          <button className="btn btn-back-custom" onClick={() => navigate(-1)}>
+          <button className="btn btn-back-custom" onClick={() => navigate("/")}>
             <img src="/img/voltar.png" id="voltar" alt="Voltar" />
           </button>
         </div>
