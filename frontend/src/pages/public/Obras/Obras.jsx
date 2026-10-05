@@ -40,9 +40,8 @@ function Obras() {
   // formatação da data
   let anoFinal = "";
   if (obra.ano) {
-    let anoSplit = obra.ano.split("T");
-    let data = anoSplit[0];
-    let anoSolto = data.split("-");
+    const anoFormatado = obra.ano ? obra.ano.split("T")[0] : "Data não informada";
+    let anoSolto = anoFormatado.split("-");
     anoFinal = anoSolto[2] + "/" + anoSolto[1] + "/" + anoSolto[0];
   }
 
@@ -54,7 +53,7 @@ function Obras() {
             <img src="/img/voltar.png" id="voltar" alt="Voltar" />
           </button>
         </div>
-        
+
         <div className="detail-hero-section d-flex align-items-center justify-content-center">
           {obra.foto && (
             <img src={obra.foto} alt={obra.titulo} id="imagem" className="shadow-lg" />

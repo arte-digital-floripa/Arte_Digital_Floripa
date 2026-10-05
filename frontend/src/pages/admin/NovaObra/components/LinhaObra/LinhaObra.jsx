@@ -16,9 +16,8 @@ function LinhaObra({
   // formatar ano
   let anoFinal = "N/A";
   if (ano) {
-    let anoSplit = ano.split("T");
-    let data = anoSplit[0];
-    let anoSolto = data.split("-");
+    const anoFormatado = ano ? ano.split("T")[0] : "Data não informada.";
+    let anoSolto = anoFormatado.split("-");
     anoFinal = anoSolto[2] + "/" + anoSolto[1] + "/" + anoSolto[0];
   }
 
