@@ -17,6 +17,7 @@ import RecuperarSenha from "./pages/public/recuperarSenha/RecuperarSenha";
 // Paginas Administrativas
 import NovaObra from "./pages/admin/NovaObra/NovaObra";
 import NovoUsuario from "./pages/admin/NovoUsuario/NovoUsuario";
+import NotFound from "./pages/public/NotFound/NotFound";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
             <Route path="/esqueci-senha" element={<EsqueciSenha />} />
             <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           </Route>
-
+          <Route path="*" element={<NotFound />} />
           {/* Rotas Administrativas (Protegidas) */}
           <Route path="/admin" element={<ProtectedRoute />}>
             <Route element={<AdminLayout />}>
@@ -43,7 +44,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      
+
       <ToastContainer
         position="top-center"
         autoClose={5000}
