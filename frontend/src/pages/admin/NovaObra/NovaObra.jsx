@@ -172,8 +172,6 @@ function NovaObra() {
 
       toast.success("Obra cadastrada com sucesso!");
 
-      console.log(response.data);
-
       setNovaObra({
         titulo: "",
         categoria: "",
@@ -220,7 +218,6 @@ function NovaObra() {
         });
 
         setObras(response.data || []);
-        console.log(response.data)
       } catch (error) {
         toast.error("Erro ao buscar obras.", {
           position: "top-center",

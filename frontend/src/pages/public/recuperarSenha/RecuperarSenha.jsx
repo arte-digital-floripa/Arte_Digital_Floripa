@@ -14,20 +14,16 @@ function RecuperarSenha() {
 
   const tempToken = searchParams.get("token");
 
-  console.log(tempToken)
-
   const navigate = useNavigate();
 
   // Funções handle
 
   function handleSenha(e) {
     setSenha(e.target.value);
-    console.log(senha);
   }
 
   function handleConfirmarSenha(e) {
     setConfirmarSenha(e.target.value);
-    console.log(confirmarSenha);
   }
 
   // enviar
