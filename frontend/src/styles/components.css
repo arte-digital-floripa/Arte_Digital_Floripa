@@ -151,16 +151,14 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: var(--color-surface-default);
-  border-bottom: 1px solid var(--color-surface-secondary);
+  background: transparent;
   transition: all 0.3s ease;
 }
 
 .navbar-container {
-  max-width: 1440px;
+  max-width: 95%;
   height: 104px;
   margin: 0 auto;
-  padding: 0 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -168,25 +166,32 @@
 
 .brand-lockup {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  width: 320px;
 }
 
+
 .brand-title-top {
-  font-family: var(--font-sans-primary);
-  font-size: 13px;
+  font-family: var(--font-sans-support);
+  font-weight: 400;
+  font-size: 20px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-text-inverse);
 }
 
 .brand-title-bottom {
-  font-family: var(--font-serif-display);
+  font-family: var(--font-serif-support);
   font-size: 26px;
   line-height: 1.1;
   font-weight: 400;
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse);
 }
 
 .nav-links-list {
@@ -201,9 +206,9 @@
 .nav-item-link {
   position: relative;
   font-family: var(--font-sans-primary);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse);
   padding: 10px 0;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -360,7 +365,9 @@
   overflow: hidden;
   text-decoration: none;
   color: var(--color-surface-default);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   height: 460px;
 }
 
@@ -448,7 +455,9 @@
   text-decoration: none;
   color: var(--color-text-primary);
   box-shadow: var(--shadow-discover-card);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .artwork-card:hover {
@@ -499,4 +508,3 @@
   font-size: 13px;
   color: var(--color-divider-section);
 }
-
