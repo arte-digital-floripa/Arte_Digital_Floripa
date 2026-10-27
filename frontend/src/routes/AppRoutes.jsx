@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import CleanLayout from "../layouts/CleanLayout";
 import HomePage from "../pages/HomePage";
 import ArtistsPage from "../pages/ArtistsPage";
-import ArtistDetailPage from "../pages/ArtworkPage";
+import ArtistDetailPage from "../pages/ArtistDetailPage";
 import ArtworkPage from "../pages/ArtworkPage";
 import VirtualMuseumPage from "../pages/VirtualMuseumPage";
 import AboutPage from "../pages/AboutPage";

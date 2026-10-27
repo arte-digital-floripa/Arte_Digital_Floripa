@@ -13,7 +13,7 @@ export default function MainLayout() {
   return (
     // classe black-main esta para fins visuais temporarios,
     // retirar quando o restante for feito
-    <div className=" black-back main-layout">
+    <div className="main-layout">
       <Header />
       <main>
         <Outlet />

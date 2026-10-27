@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { getArtists } from "../services/artistsService";
+import { 
+  getArtists, 
+  getArtistById, 
+  getArtistArtworks 
+} from "../services/artistsService";
 import { toast } from "react-toastify";
 
 export function useArtists() {
@@ -27,3 +31,40 @@ export function useArtists() {
 
   return {artists, loading, error};
 }
+
+  export function useArtist(id) {
+    const [artist, setArtist] = useState(null);
+    const [artworks, setArtworks] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+      if (!id) return;
+      // Se não houver ID na URL, não faz requisição
+
+      async function fetchArtistDetails() {
+        try {
+          setLoading(true);
+
+          // Promise.all dispara a busca em paralelo
+          const [artistData, artworksData] = await Promise.all([
+            getArtistById(id),
+            getArtistArtworks(id)
+          ]);
+
+          setArtist(artistData);
+          setArtworks(artworksData);
+        } catch (err) {
+          console.error(`Erro ao buscar artista ${id}:`, err);
+          setError(err);
+          toast.error("Não foi possível carregar os detalhes do artista.");
+        } finally {
+          setLoading(false);
+        }
+      }
+
+      fetchArtistDetails();
+    }, [id]);
+
+    return { artist, artworks, loading, error };
+  }
