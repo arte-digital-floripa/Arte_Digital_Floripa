@@ -1,4 +1,4 @@
-export default function FooterGlobal() {
+export default function Footer() {
   return (
     <footer>
       <p>Arte Digital Floripa</p>

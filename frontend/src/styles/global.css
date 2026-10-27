@@ -10,9 +10,13 @@
 
 body {
   font-family: var(--font-sans-primary);
-  background-color: var(--color-surface-default);
+  background-color: var(--color-surface-charcoal);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
+}
+
+.black-back{
+  background-color: black;
 }
 
 a {
