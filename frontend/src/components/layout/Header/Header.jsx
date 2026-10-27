@@ -32,7 +32,7 @@ export default function Header() {
               Lugares
             </NavLink>
           </li>
-          <li className="nav-item-link">
+          <li>
             <NavLink className="nav-item-link" to="/museu-virtual">
               Museu Virtual
             </NavLink>

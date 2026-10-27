@@ -147,12 +147,14 @@
    4. NAVIGATION BAR (.navbar-*)
    -------------------------------------------------------------------------- */
 .navbar-header {
-  position: sticky;
+  position: absolute;
   top: 0;
-  z-index: 100;
+  left: 0;
   width: 100%;
+  z-index: 100;
   background: transparent;
   transition: all 0.3s ease;
+  mix-blend-mode: difference;
 }
 
 .navbar-container {
@@ -172,10 +174,15 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--color-text-inverse);
   width: 320px;
 }
 
+.brand-title-top,
+.brand-title-bottom,
+.nav-item-link {
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
 
 .brand-title-top {
   font-family: var(--font-sans-support);
@@ -183,7 +190,6 @@
   font-size: 20px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-text-inverse);
 }
 
 .brand-title-bottom {
@@ -191,7 +197,6 @@
   font-size: 26px;
   line-height: 1.1;
   font-weight: 400;
-  color: var(--color-text-inverse);
 }
 
 .nav-links-list {
@@ -208,17 +213,17 @@
   font-family: var(--font-sans-primary);
   font-size: 20px;
   font-weight: 400;
-  color: var(--color-text-inverse);
   padding: 10px 0;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 .nav-item-link:hover {
-  color: var(--color-accent-primary);
+  mix-blend-mode: normal;
+  color: var(--color-accent-primary) !important;
 }
 
 .nav-item-link.active {
+  mix-blend-mode: normal;
   color: var(--color-navigation-active);
   font-weight: 500;
 }
@@ -246,7 +251,6 @@
     font-size: 15px;
   }
 }
-
 /* --------------------------------------------------------------------------
    5. FOOTER GLOBAL (.footer-global)
    -------------------------------------------------------------------------- */
@@ -259,29 +263,48 @@
 }
 
 .footer-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 56px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  max-width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
   gap: 36px;
-  align-items: start;
 }
 
 .footer-slot-brand {
-  padding-top: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  gap: 8px;
+}
+
+.footer-brand-logo {
+
 }
 
 .footer-brand-title {
-  font-family: var(--font-serif-display);
-  font-size: 28px;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
+.footer-info-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  gap: 30px;
+}
+
 .footer-brand-desc {
-  font-family: var(--font-sans-primary);
+  /* font-family: var(--font-sans-primary); */
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   max-width: 320px;
 }
@@ -291,14 +314,9 @@
 }
 
 .footer-slot-partner {
-  padding-top: 42px;
 }
 
-.footer-slot-ack {
-  padding-top: 31px;
-}
-
-.footer-heading {
+/* .footer-heading {
   font-family: var(--font-sans-primary);
   font-size: 16px;
   font-weight: 500;
@@ -306,13 +324,17 @@
   letter-spacing: 0.05em;
   color: var(--color-accent-primary);
   margin-bottom: 16px;
-}
+} */
 
 .footer-text {
-  font-family: var(--font-sans-primary);
+  font-family: var(--font-sans-support);
   font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
+}
+
+.muted {
+  color: #8b93a0;
 }
 
 @media (max-width: 900px) {

@@ -10,16 +10,21 @@
 
 body {
   font-family: var(--font-sans-primary);
-  background-color: var(--color-surface-charcoal);
+  background-color: #fff;
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
-}
-
-.black-back{
-  background-color: black;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+html,
+body,
+#root,
+main,
+section {
+  background-color: #ffffff; /* Ou coloque a cor padrão de fundo do seu site */
+  color: #1a1a1a;
 }
