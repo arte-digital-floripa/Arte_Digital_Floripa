@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "./logo-mock.png";
+import logo from "../../../../public/img/logo-arte-digital-provisorio.png";
 
 export default function Header() {
   return (
@@ -10,7 +10,7 @@ export default function Header() {
 
         <Link className="brand-lockup" to="/">
           <div>
-            <img src={logo} alt="Logo Arte Digital Floripa" />
+            <img className="brand-logo" src={logo} alt="Logo Arte Digital Floripa" />
           </div>
           <div>
             <span className="brand-title-top">Arte Digital</span>
