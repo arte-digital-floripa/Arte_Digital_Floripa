@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Jomolhari&family=Inria+Serif:wght@700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --font-serif-display: 'Jomolhari', Georgia, serif;
+  --font-serif-accent: 'Inria Serif', serif;
+  --font-sans-primary: 'Inclusive Sans', sans-serif;
+  --font-sans-support: 'Inter', system-ui, sans-serif;
+}
+

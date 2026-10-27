@@ -1,17 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "react-toastify/dist/ReactToastify.css";
 
-// css do react toastify
-import "react-toastify/dist/ReactToastify.css"
-
-// bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
-// css
+// Design Tokens & Global CSS
+import "./styles/global.css";
 import "./index.css";
 
-// app
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(

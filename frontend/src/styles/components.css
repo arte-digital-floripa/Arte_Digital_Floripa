@@ -1,0 +1,502 @@
+/* ==========================================================================
+   ARTE DIGITAL FLORIPA - COMPONENT STYLES (CENTRALIZADO)
+   Baseado nos tokens e componentes oficiais do Figma
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BUTTONS (.btn)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 14px 28px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-surface-default);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-navigation-active);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-divider-section);
+  color: var(--color-text-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.btn-dark {
+  background-color: var(--color-surface-charcoal);
+  color: var(--color-surface-default);
+}
+
+.btn-dark:hover {
+  background-color: var(--color-surface-ink);
+}
+
+.btn-icon-pill {
+  border-radius: 9999px;
+  padding: 12px 24px;
+}
+
+/* --------------------------------------------------------------------------
+   2. FILTER TAG (.filter-tag)
+   -------------------------------------------------------------------------- */
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  padding: 8px 22px;
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background-color: transparent;
+  border: 1px solid var(--color-divider-metrics);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-tag:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.filter-tag.active {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-surface-default);
+}
+
+/* --------------------------------------------------------------------------
+   3. SEARCH INPUT (.search-container)
+   -------------------------------------------------------------------------- */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  background-color: var(--color-surface-default);
+  border: 1px solid var(--color-divider-metrics);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.search-container:focus-within {
+  border-color: var(--color-accent-primary);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px 20px;
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  color: var(--color-text-primary);
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.search-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 100%;
+  background-color: var(--color-accent-primary);
+  color: var(--color-surface-default);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+  background-color: var(--color-navigation-active);
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION BAR (.navbar-*)
+   -------------------------------------------------------------------------- */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--color-surface-default);
+  border-bottom: 1px solid var(--color-surface-secondary);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1440px;
+  height: 104px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.brand-title-top {
+  font-family: var(--font-sans-primary);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.brand-title-bottom {
+  font-family: var(--font-serif-display);
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.nav-links-list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item-link {
+  position: relative;
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  padding: 10px 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-item-link:hover {
+  color: var(--color-accent-primary);
+}
+
+.nav-item-link.active {
+  color: var(--color-navigation-active);
+  font-weight: 500;
+}
+
+.nav-item-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-navigation-active);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 20px;
+    height: 72px;
+  }
+  .nav-links-list {
+    gap: 16px;
+  }
+  .nav-item-link {
+    font-size: 15px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER GLOBAL (.footer-global)
+   -------------------------------------------------------------------------- */
+.footer-global {
+  width: 100%;
+  background-color: var(--color-surface-charcoal);
+  color: var(--color-surface-default);
+  padding: 64px 0 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.footer-slot-brand {
+  padding-top: 4px;
+}
+
+.footer-brand-title {
+  font-family: var(--font-serif-display);
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.footer-brand-desc {
+  font-family: var(--font-sans-primary);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-slot-initiative {
+  padding-top: 43px;
+}
+
+.footer-slot-partner {
+  padding-top: 42px;
+}
+
+.footer-slot-ack {
+  padding-top: 31px;
+}
+
+.footer-heading {
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-primary);
+  margin-bottom: 16px;
+}
+
+.footer-text {
+  font-family: var(--font-sans-primary);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 24px;
+    gap: 24px;
+  }
+  .footer-slot-initiative,
+  .footer-slot-partner,
+  .footer-slot-ack {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. FOOTER ARTWORK (.footer-artwork)
+   -------------------------------------------------------------------------- */
+.footer-artwork {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-surface-default);
+  border-top: 1px solid var(--color-divider-metrics);
+}
+
+.footer-artwork-raster {
+  width: 100%;
+  max-height: 104px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   7. ARTIST CARD (.artist-card)
+   -------------------------------------------------------------------------- */
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-charcoal);
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-surface-default);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 460px;
+}
+
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.artist-card.featured {
+  width: 100%;
+  max-width: 500px;
+}
+
+.artist-card.compact {
+  width: 100%;
+  max-width: 320px;
+}
+
+.artist-card-artwork-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background-color: var(--color-surface-ink);
+}
+
+.artist-card-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.artist-card:hover .artist-card-artwork {
+  transform: scale(1.04);
+}
+
+.artist-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 16px 22px 20px;
+}
+
+.artist-card-name {
+  font-family: var(--font-serif-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--color-surface-default);
+}
+
+.artist-card-summary {
+  font-family: var(--font-sans-support);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.artist-card-works {
+  font-family: var(--font-sans-support);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   8. ARTWORK CARD (.artwork-card)
+   -------------------------------------------------------------------------- */
+.artwork-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-default);
+  border: 1px solid var(--color-divider-metrics);
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-discover-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.artwork-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.artwork-card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-surface-work-detail);
+}
+
+.artwork-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.artwork-card:hover .artwork-card-image {
+  transform: scale(1.03);
+}
+
+.artwork-card-info {
+  padding: 18px 20px;
+}
+
+.artwork-card-title {
+  font-family: var(--font-serif-display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  color: var(--color-text-primary);
+}
+
+.artwork-card-artist {
+  font-family: var(--font-sans-primary);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.artwork-card-year {
+  font-family: var(--font-sans-primary);
+  font-size: 13px;
+  color: var(--color-divider-section);
+}
+

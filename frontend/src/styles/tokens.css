@@ -1,0 +1,33 @@
+:root {
+  /* Surfaces / Fundos */
+  --color-surface-default: #FFFFFF;
+  --color-surface-charcoal: #16191E;
+  --color-surface-ink: #0D0D0B;
+  --color-surface-secondary: #EDEAE6;
+  --color-surface-artist: #EBECE4;
+  --color-surface-work-detail: #F3F2EE;
+  --color-surface-collection-stats: #F5F2EF;
+  --color-surface-placeholder: #D9D9D9;
+
+  /* Textos */
+  --color-text-primary: #000000;
+  --color-text-secondary: #7E6664;
+  --color-text-inverse: #FFFFFF;
+
+  /* Acentos & Destaques */
+  --color-accent-primary: #FD7659;
+  --color-navigation-active: #F96F55;
+
+  /* Divisores & Linhas */
+  --color-divider-section: #7E6664;
+  --color-divider-metrics: #D8D8D8;
+
+  /* Sombras (Elevation) */
+  --shadow-discover-card: 3px 16px 10.1px -12px rgba(0, 0, 0, 0.75);
+
+  /* Espaçamentos Padronizados */
+  --gap-sm: 10px;
+  --gap-md: 12px;
+  --gap-lg: 24px;
+}
+
