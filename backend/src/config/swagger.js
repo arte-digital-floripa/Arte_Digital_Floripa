@@ -2,10 +2,10 @@ import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
- 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
- 
+
 // Adicione aqui o caminho de cada arquivo de rotas
 const routeFiles = [
     join(__dirname, '../modules/usuario/usuarioRoutes.js'),
@@ -13,7 +13,7 @@ const routeFiles = [
     join(__dirname, '../modules/autor/autorRoutes.js'),
     join(__dirname, '../modules/obra/obraRoutes.js'),
 ];
- 
+
 const options = {
     definition: {
         openapi: '3.0.3',
@@ -65,7 +65,6 @@ const options = {
                         data_criacao: { type: 'string', format: 'date', example: '2024-01-01' },
                         descricao: { type: 'string', example: 'Uma escultura digital' },
                         categoria: { type: 'string', example: 'Escultura' },
-                        id_usuario: { type: 'integer', example: 1 },
                         midia3d: {
                             type: 'array',
                             items: {
@@ -100,7 +99,7 @@ const options = {
     },
     apis: routeFiles,
 };
- 
+
 const swaggerSpec = swaggerJSDoc(options);
- 
+
 export { swaggerUi, swaggerSpec };

@@ -53,10 +53,20 @@ async function criarAutor(req, res, next) {
 async function atualizarAutor(req, res, next) {
     try {
         const id = req.params.id;
-        const dados = req.body;
+        const { nome_publico, nacionalidade, data_nascimento } = req.body;
+        
+        // Verifica se ao menos um campo tem conteúdo para atualização
+        if (!nome_publico && !nacionalidade && !data_nascimento) {
+            return res.status(400).json({
+                sucesso: false,
+                erro: "Pelo menos um campo deve ser preenchido para atualização."
+            });
+        }
+
+        const dadosAutor = { nome_publico, nacionalidade, data_nascimento }
 
         // O Service vai verificar se o ID existe e validar os dados
-        const autorAtualizado = await autorService.atualizarAutor(id, dados);
+        const autorAtualizado = await autorService.atualizarAutor(id, dadosAutor);
 
         if (!autorAtualizado) {
             return res.status(404).json({ 

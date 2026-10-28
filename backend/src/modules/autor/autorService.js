@@ -49,15 +49,16 @@ async function atualizarAutor(id, dadosAutor) {
     const autorExiste = await listarAutorPorId(id);
 
     if (!autorExiste) {
-        throw new Error("Autor nao encontrado.")
+        throw new Error("Autor não encontrado.")
     };
 
-    const { nome, nacionalidade, data_nascimento } = dadosAutor;
-    // Undefined faz com que nao seja alterado, caso nao venha nada no campo nome.
-    const nomeAtualizado = nome ? nome.trim() : undefined;
-    // Se nacionalidade e/ou data de nascimento vierem como undefined ou null eles seram repassados assim para o BD, caso contrário, serao formatados corretamente
-    const nacionalidadeAtualizada = nacionalidade !== undefined ? nacionalidade.trim() : nacionalidade;
-    const dataNascAtualizada = data_nascimento !== undefined ? new Date(data_nascimento) : data_nascimento;
+    const { nome_publico, nacionalidade, data_nascimento } = dadosAutor;
+
+    /* Caso algum dos valores seja não tenha sido preenchido, atualiza com os dados 
+       atuais e muda apenas onde foi enviado conteúdo */
+    const nomeAtualizado = nome_publico ? nome_publico.trim() : autorExiste.nome_publico
+    const nacionalidadeAtualizada = nacionalidade ? nacionalidade.trim() : autorExiste.nacionalidade;
+    const dataNascAtualizada = data_nascimento ? data_nascimento : autorExiste.data_nascimento;
 
     const autorAtualizado = await prisma.autor.update({
         where: { id_autor: Number(id) },
