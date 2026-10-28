@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../../public/img/logo-arte-digital-provisorio.png";
+import logo from "/img/logo-arte-digital-provisorio.png";
 
 export default function Header() {
   return (
