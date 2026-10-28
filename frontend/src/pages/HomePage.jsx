@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
-    <div>
-      <h1>HomePage</h1>
+    <div style={{height: 1000 + 'px'}}>
+      <h1 style={{marginTop: 100 + 'px'}}>HomePage</h1>
     </div>
   );
 }
