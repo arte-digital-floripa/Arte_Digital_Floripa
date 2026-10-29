@@ -164,7 +164,17 @@ async function atualizarUsuario(idCadastro, registroBody) {
         }
         dadosParaAtualizar.email = emailLimpo;
     } 
-    if (tipoUsuario !== undefined) dadosParaAtualizar.tipoUsuario = tipoUsuario;
+    if (tipoUsuario !== undefined) {
+        const tipoUsuarioLimpo = tipoUsuario.trim();
+
+        if (tipoUsuarioLimpo.length === 0) {
+            const erro = new Error("Tipo de usuário não pode ter apenas espaços em branco ou estar vazio.");
+            erro.statusCode = 400;
+            throw erro;
+        }
+
+        dadosParaAtualizar.tipo_usuario = tipoUsuarioLimpo;
+    }
 
     if(Object.keys(dadosParaAtualizar).length === 0) {
         // Erro 400 body vazio
@@ -178,10 +188,10 @@ async function atualizarUsuario(idCadastro, registroBody) {
         data: dadosParaAtualizar
     });
 
-    if(tipoUsuario) {
+    if (tipoUsuario !== undefined) {
         const usuarioAtualizado = await prisma.usuario.update({
             where: { id_cadastro: idCadastro },
-            data: { tipo_usuario: tipoUsuario }
+            data: { tipo_usuario: tipoUsuario.trim() }
         });
     }
 
@@ -190,14 +200,35 @@ async function atualizarUsuario(idCadastro, registroBody) {
     return cadastroSemSenha;
 }
 
-async function deletarUsuario(idCadastro) {
+async function deletarUsuario(idCadastro, usuarioLogadoId) {
 
     // Erro 400 id não é um número  
     if(isNaN(idCadastro)) throw new Error("Id inválido");
+
+    if(usuarioLogadoId === undefined || usuarioLogadoId === null) {
+        const erro = new Error("Usuário autenticado não informado");
+        erro.statusCode = 401;
+        throw erro;
+    }
+
+    if(Number(idCadastro) === Number(usuarioLogadoId)) {
+        const erro = new Error("Você não pode excluir o seu próprio usuário");
+        erro.statusCode = 403;
+        throw erro;
+    }
+
     // Aproveita função de listarPorId e verifica se o usuário já existe
     await listarUsuarioPorId(idCadastro);
+
+    const quantidadeAdmin = await quantidadeDeAdmins();
+
+    if(quantidadeAdmin === 1) {
+        const erro = new Error("Não é possível apagar o único Admin do sistema.");
+        erro.statusCode = 409;
+        throw erro;
+    } 
     
-    const registro = await prisma.cadastro.delete({
+    await prisma.cadastro.delete({
         where: { id_cadastro: idCadastro }
     });
 }
@@ -208,6 +239,14 @@ async function verificarEmailExiste(email) {
     });
 
     return emailExiste;
+}
+
+async function quantidadeDeAdmins() {
+    const quantidadeAdmin = await prisma.cadastro.count({ 
+        where: { tipo_usuario: "admin" }
+    });
+
+    return quantidadeAdmin;
 }
 
 export default {
