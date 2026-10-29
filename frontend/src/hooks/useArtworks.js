@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getArtworks, getArtworkById } from "../services/artworksService";
+import { getArtistById, getArtistArtworks } from "../services/artistsService";
 import { toast } from "react-toastify";
 
 export function useArtworks() {
@@ -31,6 +32,8 @@ export function useArtworks() {
 
   export function useArtwork(id) {
     const [artwork, setArtwork] = useState(null);
+    const [artist, setArtist] = useState(null);
+    const [relatedArtworks, setRelatedArtworks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     
@@ -40,8 +43,29 @@ export function useArtworks() {
       async function fetchSingleArtwork() {
         try {
           setLoading(true);
-          const data = await getArtworkById(id);
-          setArtwork(data);
+
+          // 1. Busca obra principal 
+          const artworkData = await getArtworkById(id);
+          setArtwork(artworkData);
+
+          // 2. Busca o artista e suas outras obras 
+          if (artworkData?.artist_id) {
+            try {
+              const [artistData, artistWorks] = await Promise.all([
+                getArtistById(artworkData.artist_id),
+                getArtistArtworks(artworkData.artist_id),
+              ]);
+        
+
+            setArtist(artistData);
+
+            // Filtra a lista para não repetir a obra no "Explore mais"
+            const otherWorks = (artistWorks || []).filter((w) => w.id !== id);
+            setRelatedArtworks(otherWorks);
+          }catch (errRel) {
+            console.warn("Não foi possível carregar obras relacionadas:", errRel);
+            }
+          }
         } catch (err) {
           console.error(`Erro ao buscar obra ${id}:`, err);
           setError(err);
@@ -54,6 +78,6 @@ export function useArtworks() {
       fetchSingleArtwork();
     }, [id]);
     
-    return { artwork, loading, error };
+    return { artwork, artist, relatedArtworks, loading, error };
   }
 

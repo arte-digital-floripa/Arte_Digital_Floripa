@@ -1,0 +1,1105 @@
+/* ==========================================================================
+   ARTE DIGITAL FLORIPA - PAGE STYLES (TRILHA B)
+   Extraido diretamente dos frames oficiais do Figma (Screens 0:1)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. UTILITARIOS GERAIS DE PAGINA (.page-*)
+   -------------------------------------------------------------------------- */
+.page-status {
+  padding: 80px 24px;
+  text-align: center;
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  color: var(--color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   2. HOME PAGE - Frame Figma 10:78 (.home-*)
+   -------------------------------------------------------------------------- */
+.home-page {
+  width: 100%;
+  background-color: var(--color-surface-default);
+}
+
+/* Hero (1440 x 672) */
+.home-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 568px;
+  background-color: var(--color-surface-charcoal);
+  background-image: linear-gradient(
+      90deg,
+      rgba(13, 13, 11, 0.88) 0%,
+      rgba(13, 13, 11, 0.55) 55%,
+      rgba(13, 13, 11, 0.25) 100%
+    ),
+    url("https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 64px 89px;
+}
+
+.home-hero-content {
+  max-width: 580px;
+}
+
+.home-hero-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.home-hero-accent-line {
+  width: 49px;
+  height: 2px;
+  background-color: var(--color-accent-primary);
+  display: inline-block;
+}
+
+.home-hero-brand {
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 31.6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-inverse);
+}
+
+.home-hero-headline {
+  font-family: var(--font-serif-display);
+  font-size: 59px;
+  font-weight: 400;
+  line-height: 63.1px;
+  color: var(--color-text-inverse);
+  margin-bottom: 24px;
+}
+
+.home-hero-subtitle {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.4px;
+  color: var(--color-text-inverse);
+  max-width: 483px;
+  margin-bottom: 40px;
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.home-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 254px;
+  height: 64px;
+  padding: 0 28px;
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans-support);
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.home-cta-btn:hover {
+  background-color: var(--color-navigation-active);
+  transform: translateY(-2px);
+}
+
+.home-cta-btn-inverse {
+  color: var(--color-text-inverse);
+}
+
+/* CollectionStats (1440 x 200, fill #F5F2EF) */
+.home-stats-section {
+  background-color: var(--color-surface-collection-stats);
+  min-height: 200px;
+  padding: 36px 89px;
+  display: flex;
+  align-items: center;
+}
+
+.home-stats-grid {
+  width: 100%;
+  max-width: 1262px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.home-stat-item {
+  padding: 0 32px;
+  border-right: 1px solid var(--color-divider-metrics);
+}
+
+.home-stat-item:first-child {
+  padding-left: 0;
+}
+
+.home-stat-item:last-child {
+  border-right: none;
+}
+
+.home-stat-value {
+  display: block;
+  font-family: var(--font-serif-accent);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 69.5px;
+  color: var(--color-text-primary);
+}
+
+.home-stat-label {
+  display: block;
+  font-family: var(--font-sans-support);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26.9px;
+  color: var(--color-text-primary);
+}
+
+/* ExploreSection (1440 x 444, fill #EDEAE6) */
+.home-explore-section {
+  background-color: var(--color-surface-secondary);
+  padding: 56px 89px;
+}
+
+.home-explore-container {
+  max-width: 1262px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.home-explore-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.home-explore-title {
+  font-family: var(--font-serif-display);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 55.6px;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.home-explore-desc {
+  font-family: var(--font-sans-support);
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--color-text-primary);
+  margin-bottom: 32px;
+}
+
+.home-explore-tabs {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.home-explore-tab {
+  font-family: var(--font-sans-support);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+  padding: 0 0 8px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.home-explore-tab.active {
+  color: var(--color-navigation-active);
+  border-bottom-color: var(--color-navigation-active);
+}
+
+.home-explore-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* VirtualMuseumBanner (1440 x 387) */
+.home-museum-banner {
+  background-color: var(--color-surface-charcoal);
+  background-image: linear-gradient(
+      90deg,
+      rgba(13, 13, 11, 0.88) 0%,
+      rgba(13, 13, 11, 0.65) 100%
+    ),
+    url("https://images.unsplash.com/photo-1554907984-15263bfd63bd?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  padding: 56px 89px;
+  color: var(--color-text-inverse);
+}
+
+.home-museum-container {
+  max-width: 1262px;
+  margin: 0 auto;
+}
+
+.home-museum-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sans-support);
+  font-size: 17px;
+  text-transform: uppercase;
+  color: var(--color-text-inverse);
+  margin-bottom: 8px;
+}
+
+.home-museum-title {
+  font-family: var(--font-serif-display);
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 64.2px;
+  color: var(--color-text-inverse);
+  margin-bottom: 20px;
+}
+
+.home-museum-desc {
+  font-family: var(--font-sans-support);
+  font-size: 17px;
+  line-height: 26.9px;
+  color: var(--color-text-inverse);
+  max-width: 380px;
+  margin-bottom: 32px;
+}
+
+/* FeaturedArtists Section (1440 x 700, fill #EDEAE6) */
+.home-featured-artists {
+  background-color: var(--color-surface-secondary);
+  padding: 56px 89px 72px;
+}
+
+.home-featured-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.home-featured-title {
+  font-family: var(--font-serif-display);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 55.6px;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.home-featured-subtitle {
+  font-family: var(--font-sans-support);
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--color-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   3. ARTISTS LIST PAGE - Frame Figma 52:331 (.artists-page-*)
+   -------------------------------------------------------------------------- */
+.artists-page {
+  width: 100%;
+  background-color: var(--color-surface-secondary);
+  min-height: 100vh;
+}
+
+.artists-search-band {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 28px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.artists-search-label {
+  font-family: var(--font-serif-display);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 32.1px;
+  color: var(--color-text-primary);
+}
+
+.artists-theme-band {
+  width: 100%;
+  background-color: var(--color-surface-ink);
+  padding: 30px 72px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+}
+
+.artists-grid-section {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 36px 30px 72px;
+}
+
+/* --------------------------------------------------------------------------
+   4. ARTIST DETAIL PAGE - Frame Figma 52:338 (.artist-detail-*)
+   -------------------------------------------------------------------------- */
+.artist-detail-page {
+  width: 100%;
+  background-color: var(--color-surface-artist);
+}
+
+/* ArtistProfileHero (1440 x 644, fill #EDEAE6) */
+.artist-profile-hero {
+  background-color: var(--color-surface-secondary);
+  min-height: 644px;
+  display: grid;
+  grid-template-columns: 1fr 694px;
+  align-items: stretch;
+}
+
+.artist-profile-content {
+  padding: 80px 56px 56px 89px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artist-profile-top-rule {
+  width: 90px;
+  height: 1px;
+  background-color: var(--color-divider-section);
+  margin-bottom: 12px;
+}
+
+.artist-profile-name {
+  font-family: var(--font-serif-display);
+  font-size: 66px;
+  font-weight: 400;
+  line-height: 70.6px;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.artist-profile-lifespan-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.artist-profile-lifespan {
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  line-height: 31.6px;
+  color: var(--color-text-primary);
+}
+
+.artist-profile-name-accent {
+  width: 247px;
+  height: 1px;
+  background-color: var(--color-divider-section);
+}
+
+.artist-profile-bio {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.4px;
+  color: var(--color-text-primary);
+  max-width: 608px;
+  margin-bottom: 32px;
+}
+
+/* Barra de Metricas do Artista (81 Obras | 5 Exposicoes | 10 Murais) */
+.artist-metrics-bar {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding-top: 16px;
+}
+
+.artist-metric-item {
+  padding-right: 36px;
+  border-right: 1px solid var(--color-divider-metrics);
+}
+
+.artist-metric-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.artist-metric-value {
+  display: block;
+  font-family: var(--font-sans-primary);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 50.6px;
+  color: var(--color-text-primary);
+}
+
+.artist-metric-label {
+  display: block;
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25.3px;
+  color: var(--color-text-primary);
+}
+
+.artist-profile-portrait-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background-color: var(--color-surface-placeholder);
+  overflow: hidden;
+}
+
+.artist-profile-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ArtistTimeLine (1440 x 602, fill #000000) */
+.artist-timeline-section {
+  background-color: var(--color-surface-ink);
+  color: var(--color-text-inverse);
+  padding: 60px 89px;
+}
+
+.artist-timeline-container {
+  max-width: 1262px;
+  margin: 0 auto;
+}
+
+.artist-timeline-rule {
+  border: none;
+  border-top: 1px solid var(--color-divider-section);
+  margin: 0;
+}
+
+.artist-timeline-title {
+  font-family: var(--font-serif-display);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 40.7px;
+  color: var(--color-text-inverse);
+  max-width: 360px;
+  margin: 22px 0 28px;
+}
+
+.artist-timeline-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 36px;
+  padding-bottom: 28px;
+}
+
+.artist-timeline-item {
+  text-decoration: none;
+  color: var(--color-text-inverse);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.artist-timeline-thumb-wrapper {
+  width: 100%;
+  height: 245px;
+  overflow: hidden;
+  background-color: var(--color-surface-charcoal);
+}
+
+.artist-timeline-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.artist-timeline-item:hover .artist-timeline-thumb {
+  transform: scale(1.04);
+}
+
+.artist-timeline-caption {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28.4px;
+  color: var(--color-text-inverse);
+}
+
+/* GalleryArtworkSection (fill #EBECE4) */
+.artist-gallery-section {
+  background-color: var(--color-surface-artist);
+  max-width: 1362px;
+  margin: 0 auto;
+  padding: 56px 35px 80px;
+}
+
+.artist-gallery-title {
+  font-family: var(--font-serif-display);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 32px;
+}
+
+.artist-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   5. ARTWORK DETAIL PAGE - Frame Figma 52:341 (.artwork-*)
+   -------------------------------------------------------------------------- */
+.artwork-detail-page {
+  width: 100%;
+  background-color: var(--color-surface-default);
+}
+
+/* Bloco 1: ArtworkStage (Fundo #16191E, imagem 899x993 com radius 29px) */
+.artwork-stage-section {
+  background-color: var(--color-surface-charcoal);
+  padding: 37px 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.artwork-stage-frame {
+  max-width: 899px;
+  width: 100%;
+  border-radius: 29px;
+  overflow: hidden;
+  background-color: var(--color-surface-ink);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+  transform: translateY(56px);
+}
+
+.artwork-stage-image {
+  width: 100%;
+  max-height: 820px;
+  object-fit: contain;
+  display: block;
+  background-color: var(--color-surface-ink);
+}
+
+/* Bloco 2: ArtworkDetails (Fundo #EBECE4, padding lateral 89px) */
+.artwork-info-section {
+  background-color: var(--color-surface-artist);
+  padding: 114px 89px 64px;
+}
+
+.artwork-info-container {
+  max-width: 1262px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.artwork-info-details {
+  flex: 1 1 680px;
+  max-width: 775px;
+}
+
+/* Boitata Crespo: Jomolhari 66px */
+.artwork-title {
+  font-family: var(--font-serif-display);
+  font-size: 66px;
+  font-weight: 400;
+  line-height: 70.6px;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+/* 1973: Inclusive Sans 27px weight 500 */
+.artwork-year {
+  font-family: var(--font-sans-primary);
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 42.7px;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+}
+
+/* Franklin Joaquin Cascaes: Jomolhari 37px */
+.artwork-artist-name {
+  font-family: var(--font-serif-display);
+  font-size: 37px;
+  font-weight: 400;
+  line-height: 39.6px;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+}
+
+.artwork-artist-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.artwork-artist-link:hover {
+  color: var(--color-accent-primary);
+}
+
+/* Tecnica & Dimensoes: Inclusive Sans 20px line-height 24px */
+.artwork-meta-text {
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+/* Resumo: Inclusive Sans 20px line-height 24px */
+.artwork-summary {
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  margin-top: 28px;
+}
+
+/* Coluna de Botoes (341 x 58, radius 10px, fill #FD7659, text #000000 22px) */
+.artwork-actions-column {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 341px;
+  flex-shrink: 0;
+}
+
+.artwork-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 58px;
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans-primary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.4px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.artwork-action-btn:hover {
+  background-color: var(--color-navigation-active);
+  transform: translateY(-2px);
+}
+
+.artwork-curatorial-card {
+  padding: 18px;
+  background-color: var(--color-surface-default);
+  border-radius: 10px;
+  border: 1px solid var(--color-divider-metrics);
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+.artwork-curatorial-item {
+  margin-bottom: 6px;
+}
+
+.artwork-audio-card {
+  padding: 14px;
+  background-color: var(--color-surface-default);
+  border-radius: 10px;
+  border: 1px solid var(--color-divider-metrics);
+}
+
+.artwork-audio-label {
+  font-family: var(--font-sans-primary);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.artwork-audio-player {
+  width: 100%;
+}
+
+/* Bloco 3: ExploreMore (Fundo #F3F2EE, titulo Jomolhari 66px) */
+.artwork-explore-section {
+  background-color: var(--color-surface-work-detail);
+  padding: 70px 0 80px;
+}
+
+.artwork-explore-header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 89px 36px;
+}
+
+.artwork-explore-title {
+  font-family: var(--font-serif-display);
+  font-size: 66px;
+  font-weight: 400;
+  line-height: 70.6px;
+  color: var(--color-text-primary);
+}
+
+.artwork-explore-divider {
+  border: none;
+  border-top: 1px solid var(--color-divider-section);
+  width: 100%;
+  margin: 0 0 24px;
+}
+
+.artwork-explore-grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 49px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   6. PLACES, VIRTUAL MUSEUM, ABOUT & NOT FOUND (.places-*, .virtual-museum-*)
+   -------------------------------------------------------------------------- */
+.places-page {
+  background-color: var(--color-surface-secondary);
+  min-height: 85vh;
+  padding: 56px 89px;
+}
+
+.places-container {
+  max-width: 1262px;
+  margin: 0 auto;
+}
+
+.places-header {
+  margin-bottom: 40px;
+}
+
+.places-title {
+  font-family: var(--font-serif-display);
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.places-subtitle {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--gap-lg);
+}
+
+.place-card {
+  background-color: var(--color-surface-default);
+  border: 1px solid var(--color-divider-metrics);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-discover-card);
+}
+
+.place-card-image-wrapper {
+  height: 210px;
+  overflow: hidden;
+  background-color: var(--color-surface-placeholder);
+}
+
+.place-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.place-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.place-card-badge {
+  font-family: var(--font-sans-support);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.place-card-title {
+  font-family: var(--font-serif-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+.place-card-desc {
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+}
+
+.place-card-meta {
+  margin-top: auto;
+  font-family: var(--font-sans-support);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-divider-metrics);
+  padding-top: 12px;
+}
+
+.place-card-meta-item {
+  margin-bottom: 4px;
+}
+
+.virtual-museum-page {
+  background-color: var(--color-surface-charcoal);
+  min-height: calc(100vh - 104px);
+  padding: 32px 48px;
+  color: var(--color-text-inverse);
+}
+
+.virtual-museum-container {
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.virtual-museum-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.virtual-museum-title {
+  font-family: var(--font-serif-display);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--color-text-inverse);
+}
+
+.virtual-museum-subtitle {
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.virtual-museum-frame-wrapper {
+  width: 100%;
+  height: 76vh;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--color-surface-ink);
+}
+
+.virtual-museum-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.about-page {
+  background-color: var(--color-surface-work-detail);
+  min-height: 80vh;
+  padding: 72px 89px;
+}
+
+.about-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-family: var(--font-serif-display);
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+}
+
+.about-lead {
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.about-paragraph {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin-bottom: 36px;
+}
+
+.about-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap-lg);
+  margin-bottom: 40px;
+}
+
+.about-partner-card {
+  padding: 28px;
+  background-color: var(--color-surface-default);
+  border-radius: 10px;
+  border: 1px solid var(--color-divider-metrics);
+}
+
+.about-partner-title {
+  font-family: var(--font-serif-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+.about-partner-desc {
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.not-found-page {
+  min-height: 70vh;
+  background-color: var(--color-surface-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.not-found-code {
+  font-family: var(--font-serif-display);
+  font-size: 66px;
+  color: var(--color-accent-primary);
+  line-height: 1.07;
+  margin-bottom: 12px;
+}
+
+.not-found-title {
+  font-family: var(--font-serif-display);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.not-found-desc {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   7. RESPONSIVIDADE (TABLET & MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .artist-profile-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-profile-content {
+    padding: 48px 24px;
+  }
+
+  .home-explore-container {
+    grid-template-columns: 1fr;
+  }
+
+  .home-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero-section,
+  .home-stats-section,
+  .home-explore-section,
+  .home-museum-banner,
+  .home-featured-artists,
+  .artist-timeline-section,
+  .artwork-info-section,
+  .artwork-explore-header,
+  .places-page,
+  .about-page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .home-hero-headline,
+  .artist-profile-name,
+  .artwork-title,
+  .artwork-explore-title {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+
+  .artwork-actions-column {
+    width: 100%;
+  }
+}
