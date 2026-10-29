@@ -1,6 +1,8 @@
 import ArtistCard from "../components/cards/ArtistCard/ArtistCard";
 import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
 import ArtworkStage from "../components/sections/artwork-detail/ArtworkStage";
+import Button from "../components/common/Button/Button";
+import FilterTag from "../components/common/FilterTag/FilterTag";
 
 export default function HomePage() {
   const artistMockData = [
@@ -100,6 +102,59 @@ export default function HomePage() {
           <ArtworkCard artwork={artwork} key={artwork.id} />
         ))}
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="container">
+        {/* Botoes compactos - home, artists  */}
+        <Button
+          text={"Teste Primary"}
+          variant="primary"
+          className="btn-compact"
+        />
+        <Button
+          text={"Teste Outline"}
+          variant="outline"
+          className="btn-compact"
+        />
+        <Button text={"Teste Dark"} variant="dark" className="btn-compact" />
+        <Button
+          text={"Teste Icon - pill"}
+          variant="icon-pill"
+          className="btn-compact"
+        />
+      </div>
+      <br />
+      <br />
+      <div className="container">
+        {/* botão largo - pagina de obra */}
+        <Button text={"Teste Primary"} variant="primary" className="btn-wide" />
+        <Button text={"Teste Outline"} variant="outline" className="btn-wide" />
+        <Button text={"Teste Dark"} variant="dark" className="btn-compact" />
+        <Button
+          text={"Teste Icon - pill"}
+          variant="icon-pill"
+          className="btn-wide"
+        />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="container">
+        <FilterTag label={"filtro 1"} active={false} />
+        <FilterTag label={"filtro 2"} active={false} />
+        <FilterTag label={"filtro 3"} active={true} />
+        <FilterTag label={"filtro 4"} active={true} />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
