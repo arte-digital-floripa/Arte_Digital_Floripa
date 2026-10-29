@@ -3,6 +3,7 @@ import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
 import ArtworkStage from "../components/sections/artwork-detail/ArtworkStage";
 import Button from "../components/common/Button/Button";
 import FilterTag from "../components/common/FilterTag/FilterTag";
+import SearchInput from "../components/common/SearchInput/SearchInput";
 
 export default function HomePage() {
   const artistMockData = [
@@ -149,6 +150,14 @@ export default function HomePage() {
         <FilterTag tagText={"filtro 2"} active={false} />
         <FilterTag tagText={"filtro 3"} active={true} />
         <FilterTag tagText={"filtro 4"} active={true} />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="container">
+        <SearchInput />
       </div>
       <br />
       <br />
