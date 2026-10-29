@@ -200,14 +200,35 @@ async function atualizarUsuario(idCadastro, registroBody) {
     return cadastroSemSenha;
 }
 
-async function deletarUsuario(idCadastro) {
+async function deletarUsuario(idCadastro, usuarioLogadoId) {
 
     // Erro 400 id não é um número  
     if(isNaN(idCadastro)) throw new Error("Id inválido");
+
+    if(usuarioLogadoId === undefined || usuarioLogadoId === null) {
+        const erro = new Error("Usuário autenticado não informado");
+        erro.statusCode = 401;
+        throw erro;
+    }
+
+    if(Number(idCadastro) === Number(usuarioLogadoId)) {
+        const erro = new Error("Você não pode excluir o seu próprio usuário");
+        erro.statusCode = 403;
+        throw erro;
+    }
+
     // Aproveita função de listarPorId e verifica se o usuário já existe
     await listarUsuarioPorId(idCadastro);
 
-    const registro = await prisma.cadastro.delete({
+    const quantidadeAdmin = await quantidadeDeAdmins();
+
+    if(quantidadeAdmin === 1) {
+        const erro = new Error("Não é possível apagar o único Admin do sistema.");
+        erro.statusCode = 409;
+        throw erro;
+    } 
+    
+    await prisma.cadastro.delete({
         where: { id_cadastro: idCadastro }
     });
 }
@@ -220,7 +241,13 @@ async function verificarEmailExiste(email) {
     return emailExiste;
 }
 
+async function quantidadeDeAdmins() {
+    const quantidadeAdmin = await prisma.cadastro.count({ 
+        where: { tipo_usuario: "admin" }
+    });
 
+    return quantidadeAdmin;
+}
 
 export default {
     listarUsuarios,
