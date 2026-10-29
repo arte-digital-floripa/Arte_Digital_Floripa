@@ -75,8 +75,6 @@ export default function HomePage() {
     id: 0,
     title: "A pedra do deserto",
     remote_url: "/img/artwork-stage-mock.png",
-    // largura: 3,
-    // altura: 4,
   };
 
   return (
@@ -102,7 +100,6 @@ export default function HomePage() {
           <ArtworkCard artwork={artwork} key={artwork.id} />
         ))}
       </div>
-
     </div>
   );
 }
