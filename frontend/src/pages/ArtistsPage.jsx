@@ -46,13 +46,17 @@ export default function ArtistsPage() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
             gap: "28px",
-          }}
-        >
+          }}>
+
           {filteredArtists.length === 0 ? (
             <p>Nenhum artista encontrado para "{searchTerm}".</p>
           ) : (
             filteredArtists.map((artist) => (
-              <ArtistCard key={artist.id} artist={artist} variant="compact" />
+              <ArtistCard 
+              key={artist.id} 
+              artist={artist} 
+              variant={{ type: "artist", compact: true }} 
+              />
             ))
           )}
         </div>
