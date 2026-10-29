@@ -1,5 +1,6 @@
 import ArtistCard from "../components/cards/ArtistCard/ArtistCard";
 import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
+import ArtworkStage from "../components/sections/artwork-detail/ArtworkStage";
 
 export default function HomePage() {
   const artistMockData = [
@@ -49,17 +50,38 @@ export default function HomePage() {
     {
       id: 0,
       title: "Homem olhando a grama",
-      remote_url: "/img/artwork-mock-img.png",
+      remote_url: "/img/artwork-retrato-mock.png",
       date: "26/10/98",
       medium: "oleo",
       largura: "3",
       altura: "4",
-      artists: "grilo"
-    }
-  ]
+      artist: "Grilo",
+      variant: "retrato",
+    },
+    {
+      id: 1,
+      title: "Grama olhando o homem",
+      remote_url: "/img/artwork-paisagem-mock.png",
+      date: "26/10/98",
+      medium: "oleo",
+      largura: "4",
+      altura: "3",
+      artist: "Homem",
+      variant: "paisagem",
+    },
+  ];
+
+  const artworkStageMockData = {
+    id: 0,
+    title: "A pedra do deserto",
+    remote_url: "/img/artwork-stage-mock.png",
+    // largura: 3,
+    // altura: 4,
+  };
 
   return (
-    <div style={{ minHeight: 2000 + "px", paddingLeft: 100 + "px" }}>
+    <div style={{ minHeight: 2000 + "px" }}>
+      <ArtworkStage artwork={artworkStageMockData} />
       <h1>HomePage</h1>
       <div className="container">
         {artistMockData.map((artist) => (
@@ -70,10 +92,17 @@ export default function HomePage() {
           />
         ))}
       </div>
-      <br /><br /><br /><br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="container">
-        <ArtworkCard artwork={artworkMockData[0]} />
+        {artworkMockData.map((artwork) => (
+          <ArtworkCard artwork={artwork} key={artwork.id} />
+        ))}
       </div>
+
     </div>
   );
 }

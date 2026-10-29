@@ -39,7 +39,7 @@ export default function ArtistCard({ artist, variant }) {
 
   return (
     <div className={cardStyle}>
-      <Link to={`/artist/${id || ""}`}>
+      <Link to={`/artistas/${id || ""}`}>
         <div className="artist-card-wrapper">
           <img
             src={photo_url || FALLBACK_ARTIST_IMG}

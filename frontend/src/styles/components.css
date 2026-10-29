@@ -391,15 +391,7 @@
 /* --------------------------------------------------------------------------
    7. ARTIST CARD (.artist-card)
    -------------------------------------------------------------------------- */
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: space-around;
-  gap: 26px;
-}
+
 
 .artist-card {
   display: flex;
@@ -458,6 +450,7 @@
 .artist-card-artwork {
   width: 100%;
   height: 100%;
+  max-height: 260px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -581,9 +574,21 @@
   background-color: var(--color-surface-work-detail);
 }
 
-.artwork-card-image {
+.artwork-card-image.retrato {
+  /* width: 100%;
+  height: 100%; */
+  max-height: 276px;
+  max-width: 204px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.artwork-card-image.paisagem {
   width: 100%;
   height: 100%;
+  max-height: 276px;
+  max-width: 318px;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
@@ -637,14 +642,409 @@
 }
 
 .artwork-card-artist {
-  font-family: var(--font-sans-primary);
+  font-family: var(--font-sans-support);
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8); /* Branco suave */
   margin: 0 0 4px 0;
 }
 
 .artwork-card-year {
-  font-family: var(--font-sans-primary);
+  font-family: var(--font-sans-support);
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6); /* Branco mais discreto */
 }
+
+
+/* --------------------------------------------------------------------------
+   9. UTILITARIOS GERAIS DE SECAO, METRIC BADGE E DIVIDER
+   -------------------------------------------------------------------------- */
+.section-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 56px;
+}
+
+.section-title {
+  font-family: var(--font-serif-display);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.section-title-large {
+  font-family: var(--font-serif-display);
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  margin-bottom: 32px;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-divider-section);
+  margin: 24px 0;
+}
+
+.metric-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 24px;
+}
+
+.metric-badge-value {
+  font-family: var(--font-serif-display);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.metric-badge-label {
+  font-family: var(--font-sans-primary);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   10. SECOES DA HOME E ARTISTAS
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 540px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  width: 100%;
+  min-height: 540px;
+  background: linear-gradient(
+    90deg,
+    rgba(13, 13, 11, 0.88) 0%,
+    rgba(13, 13, 11, 0.45) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.hero-content-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 56px;
+  color: var(--color-surface-default);
+}
+
+.hero-brand-label {
+  display: inline-block;
+  font-family: var(--font-sans-primary);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-primary);
+  margin-bottom: 12px;
+}
+
+.hero-headline {
+  font-family: var(--font-serif-display);
+  font-size: 56px;
+  line-height: 1.1;
+  max-width: 780px;
+  margin-bottom: 20px;
+}
+
+.hero-subdescription {
+  font-size: 20px;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 36px;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.collection-stats-section {
+  background-color: var(--color-surface-collection-stats);
+  border-bottom: 1px solid var(--color-divider-metrics);
+}
+
+.collection-stats-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 36px 56px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.explore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.explore-tabs-bar,
+.filter-tags-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.explore-cards-grid,
+.artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.virtual-museum-banner {
+  background-color: var(--color-surface-charcoal);
+  color: var(--color-surface-default);
+  text-align: center;
+}
+
+.virtual-museum-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+}
+
+.banner-eyebrow {
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.banner-title {
+  font-family: var(--font-serif-display);
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.banner-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.featured-artists-section {
+  background-color: var(--color-surface-secondary);
+}
+
+.featured-artists-grid {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.artists-hero-section {
+  background-color: var(--color-surface-secondary);
+  border-bottom: 1px solid var(--color-divider-metrics);
+}
+
+.artists-search-section .section-container,
+.artists-filter-band .section-container {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   11. PERFIL DO ARTISTA E PALCO DA OBRA (ARTWORK STAGE)
+   -------------------------------------------------------------------------- */
+.artist-profile-hero {
+  background-color: var(--color-surface-artist);
+}
+
+.artist-profile-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.artist-portrait-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.artist-profile-name {
+  font-family: var(--font-serif-display);
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.artist-profile-bio {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 32px;
+}
+
+.artist-profile-metrics {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--color-divider-metrics);
+  padding-top: 24px;
+}
+
+.timeline-horizontal-scroll {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.timeline-item {
+  min-width: 220px;
+  max-width: 220px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.timeline-thumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.timeline-year {
+  font-size: 13px;
+  color: var(--color-accent-primary);
+  font-weight: 500;
+}
+
+.timeline-work-title {
+  font-family: var(--font-serif-display);
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.artwork-stage-section {
+  background-color: var(--color-surface-charcoal);
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 180px;
+}
+
+.artwork-stage-frame {
+  max-width: 1200px;
+  width: 100%;
+  max-height: 943px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -150px;
+
+}
+
+.artwork-stage-image {
+  height: 993px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 29px;
+}
+
+.artwork-details-section {
+  background-color: var(--color-surface-work-detail);
+}
+
+.artwork-details-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.artwork-title-heading {
+  font-family: var(--font-serif-display);
+  font-size: 42px;
+  margin-bottom: 6px;
+}
+
+.artwork-artist-link {
+  font-size: 20px;
+  color: var(--color-accent-primary);
+  font-weight: 500;
+}
+
+.artwork-year-text {
+  display: block;
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.artwork-technical-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-divider-metrics);
+  border-bottom: 1px solid var(--color-divider-metrics);
+}
+
+.artwork-action-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .section-container {
+    padding: 40px 24px;
+  }
+  .artist-profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-headline {
+    font-size: 38px;
+  }
+}
+
+
+/* para testes de componentes em grupo */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around;
+  gap: 26px;
+}
+
+

@@ -3,30 +3,24 @@ import { Link } from "react-router-dom";
 const FALLBACK_ARTWORK_IMG =
   "https://placehold.co/600x450/F3F2EE/7E6664?text=Obra+de+Arte";
 
-export default function ArtworkCard({
-  artwork,
-  artistName = "",
-  className = "",
-}) {
-  const { id, title, remote_url, date, medium, largura, altura, artists } =
+export default function ArtworkCard({ artwork }) {
+  const { id, title, remote_url, date, medium, largura, altura, artist , variant} =
     artwork || {};
 
-  const displayArtist = artistName || artists?.name || "";
+  const displayArtist = artist || "";
+
   const subtitleDetails = [date, medium].filter(Boolean).join(" - ");
 
   const aspectStyle =
     largura && altura ? { aspectRatio: `${largura} / ${altura}` } : {};
 
   return (
-    <Link
-      to={`/obras/${id || ""}`}
-      className={`artwork-card ${className}`.trim()}
-    >
+    <Link to={`/obras/${id || ""}`} className="artwork-card">
       <div className="artwork-card-image-wrapper" style={aspectStyle}>
         <img
           src={remote_url || FALLBACK_ARTWORK_IMG}
           alt={title || "Obra do acervo"}
-          className="artwork-card-image"
+          className={`artwork-card-image ${variant}`}
           loading="lazy"
           onError={(e) => {
             e.currentTarget.src = FALLBACK_ARTWORK_IMG;
