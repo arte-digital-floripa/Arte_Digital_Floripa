@@ -164,7 +164,17 @@ async function atualizarUsuario(idCadastro, registroBody) {
         }
         dadosParaAtualizar.email = emailLimpo;
     } 
-    if (tipoUsuario !== undefined) dadosParaAtualizar.tipoUsuario = tipoUsuario;
+    if (tipoUsuario !== undefined) {
+        const tipoUsuarioLimpo = tipoUsuario.trim();
+
+        if (tipoUsuarioLimpo.length === 0) {
+            const erro = new Error("Tipo de usuário não pode ter apenas espaços em branco ou estar vazio.");
+            erro.statusCode = 400;
+            throw erro;
+        }
+
+        dadosParaAtualizar.tipo_usuario = tipoUsuarioLimpo;
+    }
 
     if(Object.keys(dadosParaAtualizar).length === 0) {
         // Erro 400 body vazio
@@ -178,10 +188,10 @@ async function atualizarUsuario(idCadastro, registroBody) {
         data: dadosParaAtualizar
     });
 
-    if(tipoUsuario) {
+    if (tipoUsuario !== undefined) {
         const usuarioAtualizado = await prisma.usuario.update({
             where: { id_cadastro: idCadastro },
-            data: { tipo_usuario: tipoUsuario }
+            data: { tipo_usuario: tipoUsuario.trim() }
         });
     }
 
@@ -196,7 +206,7 @@ async function deletarUsuario(idCadastro) {
     if(isNaN(idCadastro)) throw new Error("Id inválido");
     // Aproveita função de listarPorId e verifica se o usuário já existe
     await listarUsuarioPorId(idCadastro);
-    
+
     const registro = await prisma.cadastro.delete({
         where: { id_cadastro: idCadastro }
     });
@@ -209,6 +219,8 @@ async function verificarEmailExiste(email) {
 
     return emailExiste;
 }
+
+
 
 export default {
     listarUsuarios,
