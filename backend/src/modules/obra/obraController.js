@@ -4,7 +4,10 @@ async function listarObras(req, res, next) {
     try {
         const { categoria, autor, titulo } = req.query;
         const obras = await obraService.listarObras({ categoria, autor, titulo });
-        return res.status(200).json(obras);
+        return res.status(200).json({
+            sucesso: true,
+            data: obras
+        });
     } catch (error) {
         next(error);
     }
@@ -15,10 +18,16 @@ async function listarObraPorId(req, res, next) {
         const obra = await obraService.listarObraPorId(req.params.id);
 
         if (!obra) {
-            return res.status(404).json({ error: 'Obra não encontrada' });
+            return res.status(404).json({
+                sucesso: false,
+                mensagem: 'Obra não encontrada.'
+            });
         }
 
-        return res.status(200).json({ obra });
+        return res.status(200).json({
+            sucesso: true,
+            data: obra
+        });
     } catch (error) {
         next(error);
     }
@@ -27,7 +36,11 @@ async function listarObraPorId(req, res, next) {
 async function criarObra(req, res, next) {
     try {
         const novaObra = await obraService.criarObra(req.body);
-        return res.status(201).json(novaObra);
+        return res.status(201).json({
+            sucesso: true,
+            mensagem: 'Obra criada com sucesso.',
+            data: novaObra
+        });
     } catch (error) {
         next(error);
     }
@@ -36,7 +49,11 @@ async function criarObra(req, res, next) {
 async function atualizarObra(req, res, next) {
     try {
         const obraAtualizada = await obraService.atualizarObra(req.params.id, req.body);
-        return res.status(200).json(obraAtualizada);
+        return res.status(200).json({
+            sucesso: true,
+            mensagem: 'Obra atualizada com sucesso.',
+            data: obraAtualizada
+        });
     } catch (error) {
         next(error);
     }

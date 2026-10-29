@@ -33,36 +33,42 @@ const router = Router();
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id_obra:
- *                     type: integer
- *                   titulo:
- *                     type: string
- *                   data_criacao:
- *                     type: string
- *                     format: date-time
- *                     nullable: true
- *                   descricao:
- *                     type: string
- *                     nullable: true
- *                   categoria:
- *                     type: string
- *                     nullable: true
- *                   midia3d:
- *                     type: array
- *                     items:
- *                       type: object
- *                   usuario_acervo:
- *                     type: array
- *                     items:
- *                       type: object
- *                   autor_acervo:
- *                     type: array
- *                     items:
- *                       type: object
+ *               type: object
+ *               properties:
+ *                 sucesso:
+ *                   type: boolean
+ *                   example: true
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id_obra:
+ *                         type: integer
+ *                       titulo:
+ *                         type: string
+ *                       data_criacao:
+ *                         type: string
+ *                         format: date-time
+ *                         nullable: true
+ *                       descricao:
+ *                         type: string
+ *                         nullable: true
+ *                       categoria:
+ *                         type: string
+ *                         nullable: true
+ *                       midia3d:
+ *                         type: array
+ *                         items:
+ *                           type: object
+ *                       usuario_acervo:
+ *                         type: array
+ *                         items:
+ *                           type: object
+ *                       autor_acervo:
+ *                         type: array
+ *                         items:
+ *                           type: object
  */
 router.get("/listar", obraController.listarObras);
 
@@ -81,31 +87,42 @@ router.get("/listar", obraController.listarObras);
  *           type: integer
  *         description: ID numérico da obra
  *     responses:
- *       200:
+*       200:
  *         description: Obra encontrada
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
- *                 id_obra:
- *                   type: integer
- *                 titulo:
- *                   type: string
- *                 data_criacao:
- *                   type: string
- *                   format: date-time
- *                   nullable: true
- *                 descricao:
- *                   type: string
- *                   nullable: true
- *                 categoria:
- *                   type: string
- *                   nullable: true
- *                 midia3d:
- *                   type: array
- *                   items:
- *                     type: object
+ *                 sucesso:
+ *                   type: boolean
+ *                   example: true
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id_obra:
+ *                       type: integer
+ *                     titulo:
+ *                       type: string
+ *                     data_criacao:
+ *                       type: string
+*                       format: date-time
+ *                       nullable: true
+ *                     categoria:
+ *                       type: string
+ *                       nullable: true
+ *                     midia3d:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                     usuario_acervo:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                     autor_acervo:
+ *                       type: array
+ *                       items:
+ *                         type: object
  *                 usuario_acervo:
  *                   type: array
  *                   items:
@@ -190,6 +207,15 @@ router.get("/listar/:id", obraController.listarObraPorId);
  *           application/json:
  *             schema:
  *               type: object
+ *               properties:
+ *                 sucesso:
+ *                   type: boolean
+ *                   example: true
+ *                 mensagem:
+ *                   type: string
+ *                   example: Obra criada com sucesso.
+ *                 data:
+ *                   $ref: '#/components/schemas/Obra'
  *       400:
  *         description: Dados inválidos (título ausente, IDs inválidos, mídia inválida)
  *         content:
@@ -282,6 +308,15 @@ router.post("/criar", authMiddleware, obraController.criarObra);
  *           application/json:
  *             schema:
  *               type: object
+ *               properties:
+ *                 sucesso:
+ *                   type: boolean
+ *                   example: true
+ *                 mensagem:
+ *                   type: string
+ *                   example: Obra atualizada com sucesso.
+ *                 data:
+ *                   $ref: '#/components/schemas/Obra'
  *       400:
  *         description: Dados inválidos enviados ao servidor
  *         content:

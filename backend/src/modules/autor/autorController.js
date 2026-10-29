@@ -22,7 +22,7 @@ async function listarAutorPorId(req, res, next) {
         if (!autor) {
             return res.status(404).json({
                 sucesso: false,
-                erro: "Autor nao encontrado."
+                mensagem: "Autor não encontrado."
             });
         }
 
@@ -59,10 +59,10 @@ async function atualizarAutor(req, res, next) {
         const autorAtualizado = await autorService.atualizarAutor(id, dados);
 
         if (!autorAtualizado) {
-            return res.status(404).json({ 
-            sucesso: false, 
-            erro: "Autor não encontrado."
-        });
+            return res.status(404).json({
+                sucesso: false,
+                mensagem: "Autor não encontrado."
+            });
         }
 
         return res.status(200).json({
