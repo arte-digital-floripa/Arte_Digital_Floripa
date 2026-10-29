@@ -1,6 +1,7 @@
 import ArtistCard from "../components/cards/ArtistCard/ArtistCard";
 import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
 import ArtworkStage from "../components/sections/artwork-detail/ArtworkStage";
+import Button from "../components/common/Button/Button";
 
 export default function HomePage() {
   const artistMockData = [
@@ -100,6 +101,22 @@ export default function HomePage() {
           <ArtworkCard artwork={artwork} key={artwork.id} />
         ))}
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="container">
+        <Button text={"Teste Primary"} variant="primary" />
+        <Button text={"Teste Outline"} variant="outline" />
+        <Button text={"Teste Dark"} variant="dark" />
+        <Button text={"Teste Icon - pill"} variant="icon-pill" />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

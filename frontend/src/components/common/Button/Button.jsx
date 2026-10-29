@@ -1,3 +1,12 @@
-export default function Button({ children, ...props }) {
-  return <button {...props}>{children}</button>;
+export default function Button({
+  text,
+  variant = "primary",
+  classes = "",
+  ...props
+}) {
+  return (
+    <button className={`btn btn-${variant} ${classes}`.trim()} {...props}>
+      {text}
+    </button>
+  );
 }
