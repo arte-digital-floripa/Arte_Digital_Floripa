@@ -1,4 +1,5 @@
 import ArtistCard from "../components/cards/ArtistCard/ArtistCard";
+import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
 
 export default function HomePage() {
   const artistMockData = [
@@ -44,8 +45,21 @@ export default function HomePage() {
     },
   ];
 
+  const artworkMockData = [
+    {
+      id: 0,
+      title: "Homem olhando a grama",
+      remote_url: "/img/artwork-mock-img.png",
+      date: "26/10/98",
+      medium: "oleo",
+      largura: "3",
+      altura: "4",
+      artists: "grilo"
+    }
+  ]
+
   return (
-    <div style={{ height: 1000 + "px", paddingLeft: 100 + "px" }}>
+    <div style={{ minHeight: 2000 + "px", paddingLeft: 100 + "px" }}>
       <h1>HomePage</h1>
       <div className="container">
         {artistMockData.map((artist) => (
@@ -55,6 +69,10 @@ export default function HomePage() {
             key={artist.artist.id}
           />
         ))}
+      </div>
+      <br /><br /><br /><br /><br />
+      <div className="container">
+        <ArtworkCard artwork={artworkMockData[0]} />
       </div>
     </div>
   );
