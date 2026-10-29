@@ -145,10 +145,10 @@ export default function HomePage() {
       <br />
       <br />
       <div className="container">
-        <FilterTag label={"filtro 1"} active={false} />
-        <FilterTag label={"filtro 2"} active={false} />
-        <FilterTag label={"filtro 3"} active={true} />
-        <FilterTag label={"filtro 4"} active={true} />
+        <FilterTag tagText={"filtro 1"} active={false} />
+        <FilterTag tagText={"filtro 2"} active={false} />
+        <FilterTag tagText={"filtro 3"} active={true} />
+        <FilterTag tagText={"filtro 4"} active={true} />
       </div>
       <br />
       <br />
