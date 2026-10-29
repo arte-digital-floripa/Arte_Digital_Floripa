@@ -1,5 +1,5 @@
 export default function FilterTag({
-  label,
+  tagText,
   active = false,
   classes = "",
   ...props
@@ -12,7 +12,7 @@ export default function FilterTag({
       className={`filter-tag ${isActive} ${classes}`}
       {...props}
     >
-      {label}
+      {tagText}
     </button>
   );
 }
