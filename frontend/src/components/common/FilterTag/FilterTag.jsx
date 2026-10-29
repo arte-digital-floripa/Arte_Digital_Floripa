@@ -1,6 +1,17 @@
-export default function FilterTag({ label, active, onClick }) {
+export default function FilterTag({
+  label,
+  active = false,
+  classes = "",
+  ...props
+}) {
+  let isActive = active ? "active" : "";
+
   return (
-    <button onClick={onClick} className={active ? "active" : ""}>
+    <button
+      type="button"
+      className={`filter-tag ${isActive} ${classes}`}
+      {...props}
+    >
       {label}
     </button>
   );

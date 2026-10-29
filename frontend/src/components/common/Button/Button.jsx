@@ -1,11 +1,11 @@
 export default function Button({
   text,
   variant = "primary",
-  classes = "",
+  className = "btn-compact",
   ...props
 }) {
   return (
-    <button className={`btn btn-${variant} ${classes}`.trim()} {...props}>
+    <button className={`btn btn-${variant} ${className}`} {...props}>
       {text}
     </button>
   );

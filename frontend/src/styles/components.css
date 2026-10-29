@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. BUTTONS (.btn)
+   1. BUTTONS (.btn) - Estrutura Base
    -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -21,6 +21,15 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  box-sizing: border-box;
+}
+
+.btn-compact {
+  width: 255px;
+}
+
+.btn-wide {
+  width: 341px;
 }
 
 .btn-primary {
@@ -35,7 +44,9 @@
 
 .btn-outline {
   background-color: transparent;
-  border-color: var(--color-divider-section);
+  border-color: var(
+    --color-divider-section
+  ); /* Agora esta borda vai aparecer! */
   color: var(--color-text-primary);
 }
 
@@ -50,11 +61,6 @@
 
 .btn-dark:hover {
   background-color: var(--color-surface-ink);
-}
-
-.btn-icon-pill {
-  border-radius: 9999px;
-  padding: 12px 24px;
 }
 
 /* --------------------------------------------------------------------------
@@ -392,7 +398,6 @@
    7. ARTIST CARD (.artist-card)
    -------------------------------------------------------------------------- */
 
-
 .artist-card {
   display: flex;
   flex-direction: column;
@@ -653,7 +658,6 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6); /* Branco mais discreto */
 }
-
 
 /* --------------------------------------------------------------------------
    9. UTILITARIOS GERAIS DE SECAO, METRIC BADGE E DIVIDER
@@ -966,7 +970,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: -150px;
-
 }
 
 .artwork-stage-image {
@@ -1034,7 +1037,6 @@
   }
 }
 
-
 /* para testes de componentes em grupo */
 
 .container {
@@ -1046,5 +1048,3 @@
   align-content: space-around;
   gap: 26px;
 }
-
-
