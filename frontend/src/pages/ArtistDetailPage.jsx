@@ -12,7 +12,7 @@ export default function ArtistDetailPage() {
   if (loading) return <p>Carregando detalhes do artista...</p>;
 
   if (error || !artist) return <p>Artista não encontrado.</p>;
-  const artistPortrait = artist.image || artworks?.[0]?.remote_url || "";
+  const artistPortrait = artist.photo_url || artist.image || artworks?.[0]?.remote_url || "";
   const timelineWorks = artworks.slice(0, 5);
   
   return (
@@ -99,6 +99,26 @@ export default function ArtistDetailPage() {
             />
           ))}
         </div>
+        
+        <div className="artist-gallery-grid">
+          {artworks.map((obra) => {
+            const variant =
+              obra.largura && obra.altura && obra.largura > obra.altura
+              ? "paisagem"
+              : "retrato";
+            return (
+              <ArtworkCard
+              key={obra.id}
+              artwork={{
+               ...obra,
+                artist: artist.name,
+                variant,
+             }}
+            />
+          );
+         })}
+        </div>
+        
       </section>
     </div>
   );
