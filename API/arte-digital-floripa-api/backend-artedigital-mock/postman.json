@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Arte Digital Floripa API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Artistas",
+      "item": [
+        {
+          "name": "Listar Artistas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/artists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "artists"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obter Artista por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/artists/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "artists", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Obras do Artista",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/artists/1/artworks",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "artists", "1", "artworks"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Obras",
+      "item": [
+        {
+          "name": "Listar Todas as Obras",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/artworks",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "artworks"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obter Obra por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/artworks/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "artworks", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,815 @@
+{
+  "artists": [
+    {
+      "id": "1047fd49",
+      "name": "Claus de Werve (Netherlandish, 1380–1439)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    },
+    {
+      "id": "eb4f5abf",
+      "name": "Desconhecido",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    },
+    {
+      "id": "f39f9778",
+      "name": "Tilman Riemenschneider (German, active Würzburg, c. 1460–1531)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Tilman_Riemenschneider.jpg"
+    },
+    {
+      "id": "281ef857",
+      "name": "Jean de la Huerta (Spanish, active Burgundy, 1431–62)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Jean_de_la_Huerta.jpg"
+    },
+    {
+      "id": "971679cc",
+      "name": "Auguste Rodin (French, 1840–1917)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    },
+    {
+      "id": "fd6b24a0",
+      "name": "Ateu Atsa (Bangwa, c. 1840–1910)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    },
+    {
+      "id": "a917bf84",
+      "name": "John Singleton Copley (American, born The Thirteen Colonies, 1738–1815)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    },
+    {
+      "id": "14f9a63e",
+      "name": "William Merritt Chase (American, 1849–1916)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/William_Merritt_Chase.jpg"
+    },
+    {
+      "id": "cb647f9b",
+      "name": "George Bellows (American, 1882–1925)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    },
+    {
+      "id": "7fcc6a33",
+      "name": "Thomas Eakins (American, 1844–1916)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Thomas_Eakins.jpg"
+    },
+    {
+      "id": "b6f09160",
+      "name": "Albert Pinkham Ryder (American, 1847–1917)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Albert_Pinkham_Ryder.jpg"
+    },
+    {
+      "id": "0bc6080d",
+      "name": "Gustave Courbet (French, 1819–1877)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Gustave_Courbet.jpg"
+    },
+    {
+      "id": "d2e6c14a",
+      "name": "Frederic Edwin Church (American, 1826–1900)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Frederic_Edwin_Church.jpg"
+    },
+    {
+      "id": "ebbd33f3",
+      "name": "Charles Sheeler (American, 1883–1965)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Charles_Sheeler.jpg"
+    },
+    {
+      "id": "2fa94a33",
+      "name": "Vincent van Gogh (Dutch, 1853–1890)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Vincent_van_Gogh.jpg"
+    },
+    {
+      "id": "b9f1307d",
+      "name": "Thomas Cole (American, born England,1801–1848)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Thomas_Cole.jpg"
+    },
+    {
+      "id": "3947b3b1",
+      "name": "Claude Monet (French, 1840–1926)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Claude_Monet.jpg"
+    },
+    {
+      "id": "1fdfacc2",
+      "name": "Pieter de Hooch (Dutch, 1629–1684)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Pieter_de_Hooch.jpg"
+    },
+    {
+      "id": "3144e425",
+      "name": "John Sloan (American, 1871–1951)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/John_Sloan.jpg"
+    },
+    {
+      "id": "40f352e6",
+      "name": "Edgar Degas (French, 1834–1917)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Edgar_Degas.jpg"
+    },
+    {
+      "id": "47f54eef",
+      "name": "Jacques-Louis David (French, 1748–1825)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Jacques-Louis_David.jpg"
+    },
+    {
+      "id": "01717629",
+      "name": "Lorenzo Lotto (Italian, 1480–1556)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Lorenzo_Lotto.jpg"
+    },
+    {
+      "id": "87d9a806",
+      "name": "Benjamin West (American, born The Thirteen Colonies, 1738–1820)",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida",
+      "local_photo": "storage/fotos_artistas/Benjamin_West.jpg"
+    },
+    {
+      "id": "a25c2940",
+      "name": "Tempo Editorial",
+      "bio": "Mock bio",
+      "nationality": "Desconhecida"
+    }
+  ],
+  "artworks": [
+    {
+      "id": "cma_135539",
+      "title": "Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404)",
+      "date": "1404–10",
+      "category": "Sculpture",
+      "medium": "vizille alabaster",
+      "local_file": "storage/cma_135539.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1958.67/1958.67_web.jpg",
+      "largura": 688,
+      "altura": 900,
+      "artistId": "1047fd49"
+    },
+    {
+      "id": "cma_111811",
+      "title": "Nataraja, Shiva as the Lord of Dance",
+      "date": "1000s",
+      "category": "Sculpture",
+      "medium": "Bronze",
+      "local_file": "storage/cma_111811.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1930.331/1930.331_web.jpg",
+      "largura": 714,
+      "altura": 893,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_135920",
+      "title": "Saint Lawrence",
+      "date": "1502–8",
+      "category": "Sculpture",
+      "medium": "lindenwood with polychromy and gilding",
+      "local_file": "storage/cma_135920.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1959.42/1959.42_web.jpg",
+      "largura": 629,
+      "altura": 893,
+      "artistId": "f39f9778"
+    },
+    {
+      "id": "cma_98823",
+      "title": "Amitabha Triad",
+      "date": "1400s",
+      "category": "Sculpture",
+      "medium": "bronze with traces of gilding",
+      "local_file": "storage/cma_98823.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1918.501/1918.501_web.jpg",
+      "largura": 900,
+      "altura": 675,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_135538",
+      "title": "Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404)",
+      "date": "1404–10",
+      "category": "Sculpture",
+      "medium": "vizille alabaster",
+      "local_file": "storage/cma_135538.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1958.66/1958.66_web.jpg",
+      "largura": 689,
+      "altura": 900,
+      "artistId": "1047fd49"
+    },
+    {
+      "id": "cma_145412",
+      "title": "Portrait of Hottō Enmyō Kokushi",
+      "date": "c. 1295–1315",
+      "category": "Sculpture",
+      "medium": "Hinoki cypress wood with lacquer, metal staples and fittings",
+      "local_file": "storage/cma_145412.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1970.67/1970.67_web.jpg",
+      "largura": 678,
+      "altura": 900,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_119143",
+      "title": "Mourner from the Tomb of John the Fearless and Margaret of Bavaria",
+      "date": "1443–45",
+      "category": "Sculpture",
+      "medium": "salins alabaster",
+      "local_file": "storage/cma_119143.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1940.129/1940.129_web.jpg",
+      "largura": 688,
+      "altura": 900,
+      "artistId": "281ef857"
+    },
+    {
+      "id": "cma_142560",
+      "title": "Standing Buddha",
+      "date": "c. 900",
+      "category": "Sculpture",
+      "medium": "brass with silver and copper inlay",
+      "local_file": "storage/cma_142560.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1966.30/1966.30_web.jpg",
+      "largura": 685,
+      "altura": 900,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_129799",
+      "title": "Backrest of a Litter",
+      "date": "1185–1275 (radiocarbon date, 95.4% probability)",
+      "category": "Sculpture",
+      "medium": "mixed media:  wood, gold alloy, pigment, shell inlay",
+      "local_file": "storage/cma_129799.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1952.233/1952.233_web.jpg",
+      "largura": 1263,
+      "altura": 858,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_148021",
+      "title": "Eleven-Headed Bodhisattva of Compassion (Avalokiteshvara)",
+      "date": "around 1000",
+      "category": "Sculpture",
+      "medium": "gilt bronze with silver and copper inlay",
+      "local_file": "storage/cma_148021.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1975.101/1975.101_web.jpg",
+      "largura": 607,
+      "altura": 893,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_119132",
+      "title": "Mourner from the Tomb of Philip the Bold, Duke of Burgundy (1364–1404)",
+      "date": "1404–1410",
+      "category": "Sculpture",
+      "medium": "vizille alabaster",
+      "local_file": "storage/cma_119132.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1940.128/1940.128_web.jpg",
+      "largura": 687,
+      "altura": 900,
+      "artistId": "1047fd49"
+    },
+    {
+      "id": "cma_98627",
+      "title": "The Age of Bronze",
+      "date": "1875–76",
+      "category": "Sculpture",
+      "medium": "bronze",
+      "local_file": "storage/cma_98627.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1918.328/1918.328_web.jpg",
+      "largura": 507,
+      "altura": 893,
+      "artistId": "971679cc"
+    },
+    {
+      "id": "cma_127239",
+      "title": "Seated Male Carrying Maize",
+      "date": "1325–1521",
+      "category": "Sculpture",
+      "medium": "stone, pigment",
+      "local_file": "storage/cma_127239.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1949.555/1949.555_web.jpg",
+      "largura": 915,
+      "altura": 893,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_145407",
+      "title": "Ganesha",
+      "date": "c. 1070",
+      "category": "Sculpture",
+      "medium": "bronze",
+      "local_file": "storage/cma_145407.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1970.62/1970.62_web.jpg",
+      "largura": 541,
+      "altura": 893,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_122979",
+      "title": "Saluting Protective Spirit",
+      "date": "883–859 BCE",
+      "category": "Sculpture",
+      "medium": "gypsum",
+      "local_file": "storage/cma_122979.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1943.246/1943.246_web.jpg",
+      "largura": 668,
+      "altura": 893,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_114974",
+      "title": "Buddha Calling on Earth to Witness",
+      "date": "800s",
+      "category": "Sculpture",
+      "medium": "chloritic schist",
+      "local_file": "storage/cma_114974.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1935.146/1935.146_web.jpg",
+      "largura": 593,
+      "altura": 893,
+      "artistId": "eb4f5abf"
+    },
+    {
+      "id": "cma_153765",
+      "title": "Commemorative figure (lefem)",
+      "date": "mid-1800s–1910",
+      "category": "Sculpture",
+      "medium": "wood",
+      "local_file": "storage/cma_153765.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1987.62/1987.62_web.jpg",
+      "largura": 582,
+      "altura": 893,
+      "artistId": "fd6b24a0"
+    },
+    {
+      "id": "cma_94979",
+      "title": "Nathaniel Hurd",
+      "date": "c. 1765",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_94979.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1915.534/1915.534_web.jpg",
+      "largura": 748,
+      "altura": 893,
+      "artistId": "a917bf84"
+    },
+    {
+      "id": "cma_102578",
+      "title": "Portrait of Dora Wheeler",
+      "date": "1882–83",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_102578.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1921.1239/1921.1239_web.jpg",
+      "largura": 939,
+      "altura": 893,
+      "artistId": "14f9a63e"
+    },
+    {
+      "id": "cma_92937",
+      "title": "Stag at Sharkey's",
+      "date": "1909",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_92937.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1922.1133/1922.1133_web.jpg",
+      "largura": 1194,
+      "altura": 893,
+      "artistId": "cb647f9b"
+    },
+    {
+      "id": "cma_151904",
+      "title": "The Biglin Brothers Turning the Stake",
+      "date": "1873",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_151904.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1927.1984/1927.1984_web.jpg",
+      "largura": 1263,
+      "altura": 835,
+      "artistId": "7fcc6a33"
+    },
+    {
+      "id": "cma_110180",
+      "title": "The Race Track (Death on a Pale Horse)",
+      "date": "c. 1896–1908",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_110180.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1928.8/1928.8_web.jpg",
+      "largura": 900,
+      "altura": 711,
+      "artistId": "b6f09160"
+    },
+    {
+      "id": "cma_137259",
+      "title": "Mme L . . . (Laure Borreau)",
+      "date": "1863",
+      "category": "Painting",
+      "medium": "oil on fabric",
+      "local_file": "storage/cma_137259.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1962.2/1962.2_web.jpg",
+      "largura": 684,
+      "altura": 893,
+      "artistId": "0bc6080d"
+    },
+    {
+      "id": "cma_141639",
+      "title": "Twilight in the Wilderness",
+      "date": "1860",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_141639.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1965.233/1965.233_web.jpg",
+      "largura": 900,
+      "altura": 562,
+      "artistId": "d2e6c14a"
+    },
+    {
+      "id": "cma_149112",
+      "title": "Church Street El",
+      "date": "1920",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_149112.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
+      "largura": 1069,
+      "altura": 893,
+      "artistId": "ebbd33f3"
+    },
+    {
+      "id": "cma_135299",
+      "title": "Adeline Ravoux",
+      "date": "1890",
+      "category": "Painting",
+      "medium": "oil on fabric",
+      "local_file": "storage/cma_135299.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1958.31/1958.31_web.jpg",
+      "largura": 900,
+      "altura": 897,
+      "artistId": "2fa94a33"
+    },
+    {
+      "id": "cma_93014",
+      "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
+      "date": "1838",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_93014.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
+      "largura": 1263,
+      "altura": 775,
+      "artistId": "b9f1307d"
+    },
+    {
+      "id": "cma_135382",
+      "title": "The Red Kerchief",
+      "date": "c. 1868–73",
+      "category": "Painting",
+      "medium": "oil on fabric",
+      "local_file": "storage/cma_135382.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1958.39/1958.39_web.jpg",
+      "largura": 723,
+      "altura": 900,
+      "artistId": "3947b3b1"
+    },
+    {
+      "id": "cma_128391",
+      "title": "Portrait of a Family Playing Music",
+      "date": "1663",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_128391.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1951.355/1951.355_web.jpg",
+      "largura": 900,
+      "altura": 759,
+      "artistId": "1fdfacc2"
+    },
+    {
+      "id": "cma_140161",
+      "title": "A Woman's Work",
+      "date": "1912",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_140161.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1964.160/1964.160_web.jpg",
+      "largura": 730,
+      "altura": 900,
+      "artistId": "3144e425"
+    },
+    {
+      "id": "cma_125104",
+      "title": "Frieze of Dancers",
+      "date": "c. 1895",
+      "category": "Painting",
+      "medium": "oil on fabric",
+      "local_file": "storage/cma_125104.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1946.83/1946.83_web.jpg",
+      "largura": 900,
+      "altura": 314,
+      "artistId": "40f352e6"
+    },
+    {
+      "id": "cma_138464",
+      "title": "Cupid and Psyche",
+      "date": "1817",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_138464.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1962.37/1962.37_web.jpg",
+      "largura": 1180,
+      "altura": 893,
+      "artistId": "47f54eef"
+    },
+    {
+      "id": "cma_127571",
+      "title": "Portrait of a Man, Possibly Girolamo Rosati",
+      "date": "1533–34",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_127571.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1950.250/1950.250_web.jpg",
+      "largura": 824,
+      "altura": 893,
+      "artistId": "01717629"
+    },
+    {
+      "id": "cma_109245",
+      "title": "Elizabeth Shewell West and Her Son, Raphael",
+      "date": "c. 1770",
+      "category": "Painting",
+      "medium": "oil on canvas",
+      "local_file": "storage/cma_109245.jpg",
+      "remote_url": "https://openaccess-cdn.clevelandart.org/1927.393/1927.393_web.jpg",
+      "largura": 890,
+      "altura": 893,
+      "artistId": "87d9a806"
+    },
+    {
+      "id": "ufsc_150312",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150312.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150312/708.06.0.10.05.jpg?sequence=1&isAllowed=y",
+      "largura": 417,
+      "altura": 199,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150306",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150306.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150306/708.06.0.02.05.jpg?sequence=1&isAllowed=y",
+      "largura": 374,
+      "altura": 279,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150325",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150325.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150325/708.06.0.29.00.jpg?sequence=1&isAllowed=y",
+      "largura": 403,
+      "altura": 279,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150321",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150321.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150321/708.06.0.25.05.jpg?sequence=1&isAllowed=y",
+      "largura": 270,
+      "altura": 382,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150311",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150311.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150311/708.06.0.09.05.jpg?sequence=1&isAllowed=y",
+      "largura": 322,
+      "altura": 280,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150323",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150323.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150323/708.06.0.27.05.jpg?sequence=1&isAllowed=y",
+      "largura": 266,
+      "altura": 408,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150320",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150320.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150320/708.06.0.24.05.jpg?sequence=1&isAllowed=y",
+      "largura": 386,
+      "altura": 276,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150307",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150307.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150307/708.06.0.03.05.jpg?sequence=1&isAllowed=y",
+      "largura": 374,
+      "altura": 276,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150319",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150319.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150319/708.06.0.23.05.jpg?sequence=1&isAllowed=y",
+      "largura": 399,
+      "altura": 252,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150316",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150316.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150316/708.06.0.16.05.jpg?sequence=1&isAllowed=y",
+      "largura": 388,
+      "altura": 274,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150314",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150314.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150314/708.06.0.12.05.jpg?sequence=1&isAllowed=y",
+      "largura": 273,
+      "altura": 408,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150317",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150317.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150317/708.06.0.19.05.jpg?sequence=1&isAllowed=y",
+      "largura": 416,
+      "altura": 270,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150313",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150313.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150313/708.06.0.11.05.jpg?sequence=1&isAllowed=y",
+      "largura": 417,
+      "altura": 277,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150318",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150318.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150318/708.06.0.22.05.jpg?sequence=1&isAllowed=y",
+      "largura": 275,
+      "altura": 394,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150309",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150309.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150309/708.06.0.07.05.jpg?sequence=1&isAllowed=y",
+      "largura": 275,
+      "altura": 423,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150315",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150315.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150315/708.06.0.13.05.jpg?sequence=1&isAllowed=y",
+      "largura": 358,
+      "altura": 270,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150322",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150322.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150322/708.06.0.26.05.jpg?sequence=1&isAllowed=y",
+      "largura": 415,
+      "altura": 271,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150324",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150324.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150324/708.06.0.28.05.jpg?sequence=1&isAllowed=y",
+      "largura": 381,
+      "altura": 257,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150308",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150308.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150308/708.06.0.04.05.jpg?sequence=1&isAllowed=y",
+      "largura": 406,
+      "altura": 283,
+      "artistId": "a25c2940"
+    },
+    {
+      "id": "ufsc_150310",
+      "title": "Museu: obras de Franklin Cascaes",
+      "date": "Desconhecido",
+      "category": "Drawing/Sculpture",
+      "medium": "UFSC Collection",
+      "local_file": "storage/ufsc_150310.jpg",
+      "remote_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/150310/708.06.0.08.05.jpg?sequence=1&isAllowed=y",
+      "largura": 371,
+      "altura": 276,
+      "artistId": "a25c2940"
+    }
+  ]
+}

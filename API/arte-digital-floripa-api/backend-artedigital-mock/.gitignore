@@ -1,0 +1,22 @@
+# Dependências do Node.js (se for um backend em Node)
+node_modules/
+
+# Variáveis de ambiente (dados sensíveis/senhas)
+.env
+.env.local
+
+# Pastas de build/compilação
+dist/
+build/
+
+# Arquivos do sistema operacional ou editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# arquivos de guia e configuração
+
+config_banco.yaml
+github_actions_cron.yml
+handoff_api.md
