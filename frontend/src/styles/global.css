@@ -9,9 +9,12 @@
   padding: 0;
 }
 
-body {
+html,
+body,
+#root {
+  min-height: 100vh;
   font-family: var(--font-sans-primary);
-  background-color: #fff;
+  background-color: var(--color-surface-default);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
 }
@@ -19,13 +22,4 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-html,
-body,
-#root,
-main,
-section {
-  background-color: #ffffff; /* Ou coloque a cor padrão de fundo do seu site */
-  color: #1a1a1a;
 }
