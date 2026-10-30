@@ -1,2 +1,5 @@
 arquivos-locais/
+node_modules
 .env
+API/supabase_migration_fix.sql
+API/supabase_seed.sql

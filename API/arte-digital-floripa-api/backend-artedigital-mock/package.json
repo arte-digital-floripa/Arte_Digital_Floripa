@@ -2,11 +2,13 @@
   "name": "backend-mock",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "prisma skills sync || exit 0"
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "build": "npx prisma generate",
+    "migrate": "node src/migrate.js",
+    "postinstall": "npx prisma generate"
   },
   "keywords": [],
   "author": "",

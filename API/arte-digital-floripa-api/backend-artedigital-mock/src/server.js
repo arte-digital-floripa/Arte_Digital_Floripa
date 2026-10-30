@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import prisma from './libs/prisma.js';
 
@@ -10,12 +11,31 @@ const app = express();
 
 // porta do servidor
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
+
+// Middleware CORS para permitir chamadas do frontend em producao e desenvolvimento
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+  next();
+});
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    service: 'Arte Digital Floripa API',
+  });
+});
+
 app.use('/api/artists', artistRoutes);
 app.use('/api/artwork', artworkRoutes);
+app.use('/api/artworks', artworkRoutes);
 
 // health check do supabase
 
