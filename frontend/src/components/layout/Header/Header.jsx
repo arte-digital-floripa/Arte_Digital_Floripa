@@ -13,9 +13,9 @@ export default function Header() {
             <img className="brand-logo" src={logo} alt="Logo Arte Digital Floripa" />
           </div>
           <div>
-            <span className="brand-title-top">Arte Digital</span>
+            <span className="brand-title-top">ARTE DIGITAL</span>
             <br />
-            <span className="brand-title-bottom">Floripa</span>
+            <span className="brand-title-bottom">FLORIPA</span>
           </div>
         </Link>
 

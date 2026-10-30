@@ -1,18 +1,19 @@
 export default function FilterTag({
   tagText,
+  label,
   active = false,
   classes = "",
   ...props
 }) {
-  let isActive = active ? "active" : "";
+  const isActive = active ? "active" : "";
 
   return (
     <button
       type="button"
-      className={`filter-tag ${isActive} ${classes}`}
+      className={`filter-tag ${isActive} ${classes}`.trim()}
       {...props}
     >
-      {tagText}
+      {tagText || label}
     </button>
   );
 }

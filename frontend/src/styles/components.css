@@ -1,11 +1,13 @@
 /* ==========================================================================
-   ARTE DIGITAL FLORIPA - COMPONENT STYLES (CENTRALIZADO)
-   Baseado nos tokens e componentes oficiais do Figma
+   ARTE DIGITAL FLORIPA - ESTILOS DOS COMPONENTES REUTILIZAVEIS (components.css)
+   Organizado por Bloco de Componente e mapeado para as paginas onde e usado
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. BUTTONS (.btn) - Estrutura Base
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 1: COMPONENTE BUTTON (Button.jsx)
+   Usado em: AboutPage.jsx, NotFoundPage.jsx
+   Classes: .btn, .btn-compact, .btn-primary, .btn-outline, .btn-dark
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -16,7 +18,7 @@
   font-weight: 500;
   line-height: 1.2;
   padding: 14px 28px;
-  border-radius: 6px;
+  border-radius: 13px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -25,28 +27,23 @@
 }
 
 .btn-compact {
-  width: 255px;
-}
-
-.btn-wide {
-  width: 341px;
+  min-width: 254px;
+  height: 64px;
 }
 
 .btn-primary {
   background-color: var(--color-accent-primary);
-  color: var(--color-surface-default);
+  color: var(--color-text-primary);
 }
 
 .btn-primary:hover {
   background-color: var(--color-navigation-active);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   background-color: transparent;
-  border-color: var(
-    --color-divider-section
-  ); /* Agora esta borda vai aparecer! */
+  border-color: var(--color-divider-section);
   color: var(--color-text-primary);
 }
 
@@ -55,17 +52,22 @@
 }
 
 .btn-dark {
+  min-width: 254px;
+  height: 64px;
   background-color: var(--color-surface-charcoal);
   color: var(--color-surface-default);
 }
 
 .btn-dark:hover {
   background-color: var(--color-surface-ink);
+  transform: translateY(-2px);
 }
 
-/* --------------------------------------------------------------------------
-   2. FILTER TAG (.filter-tag)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 2: COMPONENTE FILTER TAG (FilterTag.jsx)
+   Usado em: ArtistsPage.jsx (Faixa de filtros por tema)
+   Classes: .filter-tag, .filter-tag.active
+   ========================================================================== */
 .filter-tag {
   display: inline-flex;
   align-items: center;
@@ -92,19 +94,23 @@
 .filter-tag.active {
   background-color: var(--color-accent-primary);
   border-color: var(--color-accent-primary);
-  color: var(--color-surface-default);
+  color: var(--color-text-primary);
 }
 
-/* --------------------------------------------------------------------------
-   3. SEARCH INPUT (.search-container)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 3: COMPONENTE SEARCH INPUT (SearchInput.jsx)
+   Usado em: ArtistsPage.jsx (Faixa de busca de artistas)
+   Classes: .search-container, .search-input, .search-submit-btn
+   ========================================================================== */
 .search-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 640px;
-  background-color: var(--color-surface-default);
-
+  max-width: 742px;
+  height: 42px;
+  background-color: #d9d9d9;
+  border: 1.5px solid #16191e;
+  border-radius: 18.5px;
   overflow: hidden;
   transition: border-color 0.2s ease;
 }
@@ -115,55 +121,46 @@
 
 .search-input {
   flex: 1;
+  height: 100%;
+  padding: 0 22px;
+  background-color: transparent;
   border: none;
   outline: none;
-  padding: 14px 20px;
   font-family: var(--font-sans-primary);
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 400;
   color: var(--color-text-primary);
-  background: transparent;
-  border: 2px solid var(--color-surface-charcoal);
-  border-right: none;
-  border-top-left-radius: 18.5px;
-  border-bottom-left-radius: 18.5px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
 .search-input::placeholder {
-  color: var(--color-text-secondary);
+  color: rgba(22, 25, 30, 0.65);
 }
 
 .search-submit-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 0 24px; */
-  height: 50.5px;
-  width: 60px;
+  width: 76px;
+  height: 100%;
   background-color: var(--color-surface-charcoal);
   color: var(--color-surface-default);
+  border: none;
+  border-radius: 0 16px 16px 0;
+  flex-shrink: 0;
   cursor: pointer;
-  font-family: var(--font-sans-primary);
-  font-size: 16px;
-  font-weight: 500;
-  border: 2px solid var(--color-surface-charcoal);
-  border-right: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 18.5px;
-  border-bottom-right-radius: 18.5px;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .search-submit-btn:hover {
   background-color: var(--color-navigation-active);
-  border-color: var(--color-navigation-active);
 }
 
-/* --------------------------------------------------------------------------
-   4. NAVIGATION BAR (.navbar-*)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 4: COMPONENTE HEADER / NAVBAR (Header.jsx)
+   Usado em: MainLayout.jsx (Topo global e VirtualMuseumPage.jsx)
+   Classes: .navbar-header, .navbar-container, .brand-lockup, .brand-logo,
+            .brand-title-top, .brand-title-bottom, .nav-links-list, .nav-item-link
+   ========================================================================== */
 .navbar-header {
   position: sticky;
   top: 0;
@@ -195,6 +192,10 @@
   width: 320px;
 }
 
+.brand-logo {
+  height: 104px;
+}
+
 .brand-title-top,
 .brand-title-bottom,
 .nav-item-link {
@@ -204,17 +205,19 @@
 
 .brand-title-top {
   font-family: var(--font-sans-support);
-  font-weight: 400;
   font-size: 20px;
-  letter-spacing: 0.15em;
+  font-weight: 400;
+  line-height: 24.2px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .brand-title-bottom {
-  font-family: var(--font-serif-support);
+  font-family: var(--font-sans-support);
   font-size: 26px;
-  line-height: 1.1;
   font-weight: 400;
+  line-height: 31.5px;
+  text-transform: uppercase;
 }
 
 .nav-links-list {
@@ -236,7 +239,7 @@
 }
 
 .nav-item-link:hover {
-  color: var(--color-accent-primary) !important;
+  color: var(--color-accent-primary);
 }
 
 .nav-item-link.active {
@@ -255,10 +258,6 @@
   border-radius: 2px;
 }
 
-.brand-logo {
-  height: 104px;
-}
-
 @media (max-width: 768px) {
   .navbar-container {
     padding: 0 20px;
@@ -271,15 +270,20 @@
     font-size: 15px;
   }
 }
-/* --------------------------------------------------------------------------
-   5. FOOTER GLOBAL (.footer-global)
-   -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   BLOCO 5: COMPONENTE FOOTER (Footer.jsx)
+   Usado em: MainLayout.jsx (Rodape institucional global)
+   Classes: .footer-global, .footer-container, .footer-slot-brand,
+            .footer-brand-logo, .footer-brand-title, .footer-info-container,
+            .footer-info-divisor, .footer-brand-desc, .footer-slot-partner,
+            .footer-slot-social, .footer-text, .muted
+   ========================================================================== */
 .footer-global {
   width: 100%;
-  height: 104px;
+  min-height: 104px;
   background-color: var(--color-surface-charcoal);
   color: var(--color-surface-default);
-  /* padding: 64px 0 48px; */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -287,10 +291,9 @@
   max-width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  align-content: stretch;
   gap: 36px;
   margin: 0 auto;
 }
@@ -301,7 +304,6 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  align-content: stretch;
   gap: 8px;
 }
 
@@ -317,10 +319,9 @@
 .footer-info-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  align-content: stretch;
   gap: 30px;
 }
 
@@ -330,7 +331,6 @@
 }
 
 .footer-brand-desc {
-  /* font-family: var(--font-sans-primary); */
   font-size: 15px;
   line-height: 1.6;
   max-width: 320px;
@@ -342,19 +342,8 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  align-content: stretch;
   gap: 30px;
 }
-
-/* .footer-heading {
-  font-family: var(--font-sans-primary);
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-accent-primary);
-  margin-bottom: 16px;
-} */
 
 .footer-text {
   font-family: var(--font-sans-support);
@@ -369,59 +358,30 @@
 
 @media (max-width: 900px) {
   .footer-container {
-    grid-template-columns: 1fr 1fr;
-    padding: 0 24px;
+    padding: 20px 24px;
     gap: 24px;
   }
-  .footer-slot-initiative,
-  .footer-slot-partner,
-  .footer-slot-ack {
-    padding-top: 0;
-  }
 }
 
-@media (max-width: 600px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   6. FOOTER ARTWORK (.footer-artwork)
-   -------------------------------------------------------------------------- */
-.footer-artwork {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-color: var(--color-surface-default);
-  border-top: 1px solid var(--color-divider-metrics);
-}
-
-.footer-artwork-raster {
-  width: 100%;
-  max-height: 104px;
-  object-fit: cover;
-  display: block;
-}
-
-/* --------------------------------------------------------------------------
-   7. ARTIST CARD (.artist-card)
-   -------------------------------------------------------------------------- */
-
+/* ==========================================================================
+   BLOCO 6: COMPONENTE ARTIST CARD (ArtistCard.jsx)
+   Usado em: HomePage.jsx (variantes .home-featured / .home-compact)
+             ArtistsPage.jsx (variantes .artist-featured / .artist-compact)
+   Classes: .artist-card, .artist-card-wrapper, .artist-card-artwork,
+            .artist-card-content, .artist-card-info, .artist-card-name,
+            .artist-card-summary, .artist-card-works
+   ========================================================================== */
 .artist-card {
   display: flex;
   flex-direction: column;
   background-color: var(--color-surface-charcoal);
-  border-radius: 6px;
+  border-radius: 11px;
   overflow: hidden;
   text-decoration: none;
   color: var(--color-surface-default);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
-  height: 460px;
 }
 
 .artist-card:hover {
@@ -429,46 +389,29 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* card do artists */
-
-.artist-card.artist-featured {
-  width: 100%;
-  max-width: 500px;
-  max-height: 460px;
+.artist-card > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
-.artist-card.artist-compact {
+.artist-card-wrapper {
   width: 100%;
-  max-width: 320px;
-  max-height: 460px;
-}
-
-/* card do home */
-
-.artist-card.home-compact {
-  width: 100%;
-  max-width: 268px;
-  max-height: 420px;
-}
-
-.artist-card.home-featured {
-  width: 100%;
-  max-width: 420px;
-  max-height: 420px;
-}
-
-.artist-card-artwork-wrapper {
-  width: 100%;
-  height: 260px;
+  height: 250px;
   overflow: hidden;
   background-color: var(--color-surface-ink);
+  border-radius: 11px 11px 0 0;
+  flex-shrink: 0;
 }
 
 .artist-card-artwork {
   width: 100%;
   height: 100%;
-  max-height: 260px;
   object-fit: cover;
+  object-position: center top;
+  display: block;
   transition: transform 0.4s ease;
 }
 
@@ -477,99 +420,87 @@
 }
 
 .artist-card-content {
+  padding: 16px 22px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  padding: 16px 22px 20px;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.artist-card-info {
+  min-height: 0;
 }
 
 .artist-card-name {
   font-family: var(--font-serif-display);
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 8px;
-  color: var(--color-surface-default);
-}
-
-/* sumario do card tipo home */
-
-.artist-card-summary.home-summary-compact {
-  font-family: var(--font-sans-support);
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 12px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  line-height: 30px;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+  white-space: nowrap;
   overflow: hidden;
-  height: 140px;
+  text-overflow: ellipsis;
 }
 
+.artist-card-summary.artist-summary-featured,
 .artist-card-summary.home-summary-featured {
   font-family: var(--font-sans-support);
   font-size: 15px;
   font-weight: 300;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 12px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 40px;
 }
 
-/* sumario do card de tipo artistas */
-
-.artist-card-summary.artist-summary-compact {
+.artist-card-summary.artist-summary-compact,
+.artist-card-summary.home-summary-compact {
   font-family: var(--font-sans-support);
   font-size: 15px;
   font-weight: 300;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 12px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 140px;
-}
-
-.artist-card-summary.artist-summary-featured {
-  font-family: var(--font-sans-support);
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 12px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  /* height: 140px; */
 }
 
 .artist-card-works {
   font-family: var(--font-sans-support);
   font-size: 14px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.65);
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.78);
   margin-top: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* --------------------------------------------------------------------------
-   8. ARTWORK CARD (.artwork-card)
-   -------------------------------------------------------------------------- */
-
+/* ==========================================================================
+   BLOCO 7: COMPONENTE ARTWORK CARD (ArtworkCard.jsx)
+   Usado em: HomePage.jsx (Seção Explore o Acervo),
+             ArtistDetailPage.jsx (Galeria de Obras do Artista),
+             ArtworkPage.jsx (Seção Explore Mais)
+   Classes: .artwork-card, .artwork-card-image-wrapper, .artwork-card-image,
+            .artwork-card-info, .artwork-card-title, .artwork-card-artist,
+            .artwork-card-year
+   ========================================================================== */
 .artwork-card {
+  width: 100%;
   display: block;
   position: relative;
-  background-color: var(--color-surface-default);
-  border: 1px solid var(--color-divider-metrics);
+  background-color: transparent;
+  border: none;
   border-radius: 6px;
   overflow: hidden;
   text-decoration: none;
@@ -587,25 +518,16 @@
 
 .artwork-card-image-wrapper {
   width: 100%;
+  display: block;
   overflow: hidden;
   background-color: var(--color-surface-work-detail);
 }
 
-.artwork-card-image.retrato {
-  /* width: 100%;
-  height: 100%; */
-  max-height: 276px;
-  max-width: 204px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
+.artwork-card-image,
+.artwork-card-image.retrato,
 .artwork-card-image.paisagem {
   width: 100%;
   height: 100%;
-  max-height: 276px;
-  max-width: 318px;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
@@ -622,19 +544,6 @@
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  /* background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.9) 60%,
-    rgba(0, 0, 0, 0.8) 65%,
-    rgba(0, 0, 0, 0.7) 70%,
-    rgba(0, 0, 0, 0.6) 75%,
-    rgba(0, 0, 0, 0.5) 80%,
-    rgba(0, 0, 0, 0.4) 85%,
-    rgba(0, 0, 0, 0.3) 90%,
-    rgba(0, 0, 0, 0.2) 95%,
-    transparent 100%
-  ); */
   background: var(--color-surface-charcoal);
   color: #ffffff;
   opacity: 0;
@@ -655,408 +564,18 @@
   font-weight: 400;
   line-height: 1.25;
   margin: 0 0 6px 0;
-  color: #ffffff; /* Sobrescreve para branco */
+  color: #ffffff;
 }
 
 .artwork-card-artist {
   font-family: var(--font-sans-support);
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.8); /* Branco suave */
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 0 4px 0;
 }
 
 .artwork-card-year {
   font-family: var(--font-sans-support);
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6); /* Branco mais discreto */
-}
-
-/* --------------------------------------------------------------------------
-   9. UTILITARIOS GERAIS DE SECAO, METRIC BADGE E DIVIDER
-   -------------------------------------------------------------------------- */
-.section-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 64px 56px;
-}
-
-.section-title {
-  font-family: var(--font-serif-display);
-  font-size: 38px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  margin-bottom: 8px;
-}
-
-.section-title-large {
-  font-family: var(--font-serif-display);
-  font-size: 52px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  margin-bottom: 12px;
-}
-
-.section-subtitle {
-  font-family: var(--font-sans-primary);
-  font-size: 18px;
-  color: var(--color-text-secondary);
-  margin-bottom: 32px;
-}
-
-.section-divider {
-  border: none;
-  border-top: 1px solid var(--color-divider-section);
-  margin: 24px 0;
-}
-
-.metric-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 16px 24px;
-}
-
-.metric-badge-value {
-  font-family: var(--font-serif-display);
-  font-size: 44px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  line-height: 1.1;
-}
-
-.metric-badge-label {
-  font-family: var(--font-sans-primary);
-  font-size: 15px;
-  color: var(--color-text-secondary);
-  margin-top: 6px;
-}
-
-/* --------------------------------------------------------------------------
-   10. SECOES DA HOME E ARTISTAS
-   -------------------------------------------------------------------------- */
-.hero-section {
-  position: relative;
-  min-height: 540px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-}
-
-.hero-overlay {
-  width: 100%;
-  min-height: 540px;
-  background: linear-gradient(
-    90deg,
-    rgba(13, 13, 11, 0.88) 0%,
-    rgba(13, 13, 11, 0.45) 100%
-  );
-  display: flex;
-  align-items: center;
-}
-
-.hero-content-container {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 80px 56px;
-  color: var(--color-surface-default);
-}
-
-.hero-brand-label {
-  display: inline-block;
-  font-family: var(--font-sans-primary);
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-accent-primary);
-  margin-bottom: 12px;
-}
-
-.hero-headline {
-  font-family: var(--font-serif-display);
-  font-size: 56px;
-  line-height: 1.1;
-  max-width: 780px;
-  margin-bottom: 20px;
-}
-
-.hero-subdescription {
-  font-size: 20px;
-  max-width: 620px;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 36px;
-  line-height: 1.5;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.collection-stats-section {
-  background-color: var(--color-surface-collection-stats);
-  border-bottom: 1px solid var(--color-divider-metrics);
-}
-
-.collection-stats-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 36px 56px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-}
-
-.explore-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.explore-tabs-bar,
-.filter-tags-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-}
-
-.explore-cards-grid,
-.artworks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 28px;
-}
-
-.virtual-museum-banner {
-  background-color: var(--color-surface-charcoal);
-  color: var(--color-surface-default);
-  text-align: center;
-}
-
-.virtual-museum-banner-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 760px;
-}
-
-.banner-eyebrow {
-  color: var(--color-accent-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.banner-title {
-  font-family: var(--font-serif-display);
-  font-size: 42px;
-  margin-bottom: 16px;
-}
-
-.banner-description {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 28px;
-}
-
-.featured-artists-section {
-  background-color: var(--color-surface-secondary);
-}
-
-.featured-artists-grid {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-.artists-hero-section {
-  background-color: var(--color-surface-secondary);
-  border-bottom: 1px solid var(--color-divider-metrics);
-}
-
-.artists-search-section .section-container,
-.artists-filter-band .section-container {
-  padding-top: 24px;
-  padding-bottom: 12px;
-}
-
-/* --------------------------------------------------------------------------
-   11. PERFIL DO ARTISTA E PALCO DA OBRA (ARTWORK STAGE)
-   -------------------------------------------------------------------------- */
-.artist-profile-hero {
-  background-color: var(--color-surface-artist);
-}
-
-.artist-profile-grid {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.artist-portrait-img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.artist-profile-name {
-  font-family: var(--font-serif-display);
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.artist-profile-bio {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  margin-bottom: 32px;
-}
-
-.artist-profile-metrics {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  border-top: 1px solid var(--color-divider-metrics);
-  padding-top: 24px;
-}
-
-.timeline-horizontal-scroll {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding-bottom: 16px;
-}
-
-.timeline-item {
-  min-width: 220px;
-  max-width: 220px;
-  text-decoration: none;
-  color: var(--color-text-primary);
-}
-
-.timeline-thumb {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-.timeline-year {
-  font-size: 13px;
-  color: var(--color-accent-primary);
-  font-weight: 500;
-}
-
-.timeline-work-title {
-  font-family: var(--font-serif-display);
-  font-size: 16px;
-  margin-top: 4px;
-}
-
-.artwork-stage-section {
-  background-color: var(--color-surface-charcoal);
-  padding: 48px 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 180px;
-}
-
-.artwork-stage-frame {
-  max-width: 1200px;
-  width: 100%;
-  max-height: 943px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: -150px;
-}
-
-.artwork-stage-image {
-  height: 993px;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  border-radius: 29px;
-}
-
-.artwork-details-section {
-  background-color: var(--color-surface-work-detail);
-}
-
-.artwork-details-card {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.artwork-title-heading {
-  font-family: var(--font-serif-display);
-  font-size: 42px;
-  margin-bottom: 6px;
-}
-
-.artwork-artist-link {
-  font-size: 20px;
-  color: var(--color-accent-primary);
-  font-weight: 500;
-}
-
-.artwork-year-text {
-  display: block;
-  font-size: 16px;
-  color: var(--color-text-secondary);
-  margin-top: 4px;
-}
-
-.artwork-technical-meta {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  padding: 16px 0;
-  border-top: 1px solid var(--color-divider-metrics);
-  border-bottom: 1px solid var(--color-divider-metrics);
-}
-
-.artwork-action-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 900px) {
-  .section-container {
-    padding: 40px 24px;
-  }
-  .artist-profile-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-headline {
-    font-size: 38px;
-  }
-}
-
-/* para testes de componentes em grupo */
-
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: space-around;
-  gap: 26px;
+  color: rgba(255, 255, 255, 0.6);
 }

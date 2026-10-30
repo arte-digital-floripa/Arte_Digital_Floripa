@@ -4,8 +4,17 @@ const FALLBACK_ARTWORK_IMG =
   "https://placehold.co/600x450/F3F2EE/7E6664?text=Obra+de+Arte";
 
 export default function ArtworkCard({ artwork }) {
-  const { id, title, remote_url, date, medium, largura, altura, artist , variant} =
-    artwork || {};
+  const {
+    id,
+    title,
+    remote_url,
+    date,
+    medium,
+    largura,
+    altura,
+    artist,
+    variant,
+  } = artwork || {};
 
   const displayArtist = artist || "";
 
@@ -15,12 +24,15 @@ export default function ArtworkCard({ artwork }) {
     largura && altura ? { aspectRatio: `${largura} / ${altura}` } : {};
 
   return (
-    <Link to={`/obras/${id || ""}`} className="artwork-card">
+    <Link
+      to={`/obras/${id || ""}`}
+      className={`artwork-card ${variant || ""}`.trim()}
+    >
       <div className="artwork-card-image-wrapper" style={aspectStyle}>
         <img
           src={remote_url || FALLBACK_ARTWORK_IMG}
           alt={title || "Obra do acervo"}
-          className={`artwork-card-image ${variant}`}
+          className={`artwork-card-image ${variant || ""}`.trim()}
           loading="lazy"
           onError={(e) => {
             e.currentTarget.src = FALLBACK_ARTWORK_IMG;

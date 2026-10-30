@@ -4,22 +4,43 @@ export default function ArtistCard({ artist, variant }) {
   const { id, name, bio, photo_url, artworks } = artist || {};
   const { type, compact } = variant || {};
 
-  // fallback da url de img
+  const FALLBACK_ARTIST_IMG = "/img/hero-artists.png";
 
-  const FALLBACK_ARTIST_IMG =
-    "https://placehold.co/600x400/16191E/FFFFFF?text=Arte+Digital+Floripa";
+  // Remove nomes longos 
+  const cleanName = (name || "Nome do Artista").split("(")[0].trim();
 
-  // texto de artworks do card
+  // Usa obra do artista quando não há foto do artista 
+  const hasValidPhoto =
+    photo_url && !photo_url.toLowerCase().includes("ui-avatars.com");
+  const firstArtworkImg =
+    Array.isArray(artworks) && artworks.length > 0
+      ? artworks[0]?.remote_url ||
+        artworks[0]?.image_url ||
+        artworks[0]?.thumbnail_url
+      : null;
+  const displayPhoto = hasValidPhoto
+    ? photo_url
+    : firstArtworkImg || FALLBACK_ARTIST_IMG;
 
+  // Texto curatorial 
+  const cleanBio =
+    bio && bio.trim().toLowerCase() !== "mock bio"
+      ? bio
+      : "Artista integrante do acervo cultural e histórico exposto na plataforma.";
+
+  // Texto de obras do card
   const worksText =
     Array.isArray(artworks) && artworks.length > 0
-      ? `${artworks.length} obra(s) catalogada(s)`
-      : "Explorar obras do artista";
+      ? `Obras: ${artworks
+          .slice(0, 2)
+          .map((w) => `“${w.title || w}”`)
+          .join(" , ")}`
+      : "Obras: Explorar acervo do artista";
 
-  let summaryStyle = "";
-  let cardStyle = "";
+  let summaryStyle;
+  let cardStyle;
 
-  if (type == "home") {
+  if (type === "home") {
     if (compact) {
       cardStyle = "artist-card home-compact";
       summaryStyle = "artist-card-summary home-summary-compact";
@@ -27,7 +48,7 @@ export default function ArtistCard({ artist, variant }) {
       cardStyle = "artist-card home-featured";
       summaryStyle = "artist-card-summary home-summary-featured";
     }
-  } else if (type == "artist") {
+  } else {
     if (compact) {
       cardStyle = "artist-card artist-compact";
       summaryStyle = "artist-card-summary artist-summary-compact";
@@ -42,8 +63,8 @@ export default function ArtistCard({ artist, variant }) {
       <Link to={`/artistas/${id || ""}`}>
         <div className="artist-card-wrapper">
           <img
-            src={photo_url || FALLBACK_ARTIST_IMG}
-            alt={name || "Retrato do artista"}
+            src={displayPhoto}
+            alt={cleanName}
             className="artist-card-artwork"
             loading="lazy"
             onError={(e) => {
@@ -52,16 +73,13 @@ export default function ArtistCard({ artist, variant }) {
           />
         </div>
         <div className="artist-card-content">
-          <div>
-            <h3 className="artist-card-name">{name || "Nome do Artista"}</h3>
-            <p className={summaryStyle}>
-              {bio ||
-                "Biografia em catalogacao pelo acervo Arte Digital Floripa."}
-            </p>
+          <div className="artist-card-info">
+            <h3 className="artist-card-name" title={cleanName}>
+              {cleanName}
+            </h3>
+            <p className={summaryStyle}>Resumo: {cleanBio}</p>
           </div>
-          <span className={`artist-card-works`}>
-            {worksText}
-          </span>
+          <span className="artist-card-works">{worksText}</span>
         </div>
       </Link>
     </div>
