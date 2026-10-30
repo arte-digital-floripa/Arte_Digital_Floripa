@@ -3,31 +3,49 @@ import { useArtist } from "../hooks/useArtists";
 import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
 
 export default function ArtistDetailPage() {
-  // Pega o ID da URL
-  const { id } = useParams(); 
-  // Busca o artista pelo ID no banco
+  const { id } = useParams();
   const { artist, artworks, loading, error } = useArtist(id);
 
+  if (loading) {
+    return <p className="page-status">Carregando detalhes do artista...</p>;
+  }
 
-  if (loading) return <p>Carregando detalhes do artista...</p>;
+  if (error || !artist) {
+    return <p className="page-status">Artista não encontrado.</p>;
+  }
 
-  if (error || !artist) return <p>Artista não encontrado.</p>;
-  const artistPortrait = artist.photo_url || artist.image || artworks?.[0]?.remote_url || "";
+  const hasValidPhoto =
+    artist.photo_url &&
+    !artist.photo_url.toLowerCase().includes("ui-avatars.com");
+  const artistPortrait =
+    (hasValidPhoto ? artist.photo_url : null) ||
+    artist.image ||
+    artworks?.[0]?.remote_url ||
+    "/img/hero-artists.png";
+
+  const cleanName = (artist.name || "Artista do Acervo").split("(")[0].trim();
+  const cleanBio =
+    artist.bio && artist.bio.trim().toLowerCase() !== "mock bio"
+      ? artist.bio
+      : "Artista integrante do acervo cultural e histórico exposto na plataforma Arte Digital Floripa.";
+
   const timelineWorks = artworks.slice(0, 5);
-  
+
   return (
     <div className="artist-detail-page">
-      {/* BLOCO 1: Hero do Artista (Textos + Métricas na esquerda | Retrato na direita) */}
+      {/* BLOCO 1: Hero do Artista */}
       <section className="artist-profile-hero">
         <div className="artist-profile-content">
           <div>
             <div className="artist-profile-top-rule" />
-            <h1 className="artist-profile-name">{artist.name}</h1>
+            <h1 className="artist-profile-name">{cleanName}</h1>
             <div className="artist-profile-lifespan-row">
-              <span className="artist-profile-lifespan">Acervo Histórico</span>
+              <span className="artist-profile-lifespan">
+                {artist.lifespan || "Acervo Histórico"}
+              </span>
               <span className="artist-profile-name-accent" />
             </div>
-            <p className="artist-profile-bio">{artist.bio}</p>
+            <p className="artist-profile-bio">{cleanBio}</p>
           </div>
           <div className="artist-metrics-bar">
             <div className="artist-metric-item">
@@ -48,12 +66,13 @@ export default function ArtistDetailPage() {
           {artistPortrait && (
             <img
               src={artistPortrait}
-              alt={artist.name}
+              alt={cleanName}
               className="artist-profile-portrait"
             />
           )}
         </div>
       </section>
+
       {/* BLOCO 2: Linha do Tempo (Faixa preta com até 5 obras) */}
       {timelineWorks.length > 0 && (
         <section className="artist-timeline-section">
@@ -86,41 +105,28 @@ export default function ArtistDetailPage() {
           </div>
         </section>
       )}
-      {/* BLOCO 3: Galeria Completa usando o ArtworkCard do Léo */}
+
+      {/* BLOCO 3: Galeria Completa de Obras do Artista */}
       <section className="artist-gallery-section">
-        <h2 className="artist-gallery-title">
-        </h2>
-        <div className="artist-gallery-grid">
-          {artworks.map((obra) => (
-            <ArtworkCard
-              key={obra.id}
-              artwork={obra}
-              artistName={artist.name}
-            />
-          ))}
-        </div>
-        
         <div className="artist-gallery-grid">
           {artworks.map((obra) => {
             const variant =
               obra.largura && obra.altura && obra.largura > obra.altura
-              ? "paisagem"
-              : "retrato";
+                ? "paisagem"
+                : "retrato";
             return (
               <ArtworkCard
-              key={obra.id}
-              artwork={{
-               ...obra,
-                artist: artist.name,
-                variant,
-             }}
-            />
-          );
-         })}
+                key={obra.id}
+                artwork={{
+                  ...obra,
+                  artist: cleanName,
+                  variant,
+                }}
+              />
+            );
+          })}
         </div>
-        
       </section>
     </div>
   );
 }
-

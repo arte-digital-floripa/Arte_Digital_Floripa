@@ -1,11 +1,13 @@
 /* ==========================================================================
-   ARTE DIGITAL FLORIPA - PAGE STYLES (TRILHA B)
-   Extraido diretamente dos frames oficiais do Figma (Screens 0:1)
+   ARTE DIGITAL FLORIPA - ESTILOS DE PAGINAS POR BLOCO (pages.css)
+   Cada bloco identifica claramente o arquivo da pagina, a rota e as classes usadas.
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. UTILITARIOS GERAIS DE PAGINA (.page-*)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 1: UTILITARIOS GERAIS E HEADER TRANSPARENTE EM HEROES
+   Usado em: MainLayout.jsx, HomePage.jsx, ArtistsPage.jsx, ArtistDetailPage.jsx, ArtworkPage.jsx
+   Classes: .page-status, .main-layout:has(...) .navbar-header
+   ========================================================================== */
 .page-status {
   padding: 80px 24px;
   text-align: center;
@@ -14,19 +16,31 @@
   color: var(--color-text-secondary);
 }
 
-/* --------------------------------------------------------------------------
-   2. HOME PAGE - Frame Figma 10:78 (.home-*)
-   -------------------------------------------------------------------------- */
+/* Deixa o Header transparente sobreposto ao Hero na Home e em Artistas */
+.main-layout:has(.home-page) .navbar-header,
+.main-layout:has(.artists-page) .navbar-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   BLOCO 2: PAGINA HOME (HomePage.jsx | Rota: "/")
+   Prefixo de classes da pagina: .home-*
+   ========================================================================== */
 .home-page {
   width: 100%;
   background-color: var(--color-surface-default);
 }
 
-/* Hero (1440 x 672) */
+/* --- Bloco 2.1: Home - Hero (HomePage.jsx) --- */
 .home-hero-section {
   position: relative;
   width: 100%;
-  min-height: 568px;
+  min-height: 672px;
   background-color: var(--color-surface-charcoal);
   background-image: linear-gradient(
       90deg,
@@ -34,12 +48,12 @@
       rgba(13, 13, 11, 0.55) 55%,
       rgba(13, 13, 11, 0.25) 100%
     ),
-    url("https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=80");
+    url("/img/hero-home.png");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 64px 89px;
+  padding: 140px 89px 64px;
 }
 
 .home-hero-content {
@@ -109,10 +123,13 @@
   font-size: 20px;
   font-weight: 400;
   border-radius: 13px;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .home-cta-btn:hover {
@@ -121,10 +138,18 @@
 }
 
 .home-cta-btn-inverse {
+  background-color: transparent;
   color: var(--color-text-inverse);
+  border: 1px solid rgba(255, 255, 255, 0.85);
 }
 
-/* CollectionStats (1440 x 200, fill #F5F2EF) */
+.home-cta-btn-inverse:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* --- Bloco 2.2: Home - Estatisticas do Acervo (HomePage.jsx) --- */
 .home-stats-section {
   background-color: var(--color-surface-collection-stats);
   min-height: 200px;
@@ -173,7 +198,7 @@
   color: var(--color-text-primary);
 }
 
-/* ExploreSection (1440 x 444, fill #EDEAE6) */
+/* --- Bloco 2.3: Home - Explore o Acervo (HomePage.jsx) --- */
 .home-explore-section {
   background-color: var(--color-surface-secondary);
   padding: 56px 89px;
@@ -217,7 +242,7 @@
 }
 
 .home-explore-tabs {
-  display: flex;
+  display: inline-flex;
   gap: 32px;
   flex-wrap: wrap;
 }
@@ -231,30 +256,105 @@
   border: none;
   padding: 0 0 8px;
   cursor: pointer;
+  text-decoration: none;
   border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-bottom-color 0.2s ease;
 }
 
-.home-explore-tab.active {
+.home-explore-tab.active,
+.home-explore-tab:hover,
+.home-explore-tab:focus-visible {
   color: var(--color-navigation-active);
   border-bottom-color: var(--color-navigation-active);
+  outline: none;
+}
+
+/* Quando o usuario passa o mouse sobre qualquer outra opcao, transfere o foco laranja para ela */
+.home-explore-tabs:hover .home-explore-tab.active:not(:hover) {
+  color: var(--color-text-primary);
+  border-bottom-color: transparent;
+}
+
+.home-explore-cta-wrapper {
+  margin-top: 28px;
 }
 
 .home-explore-collage {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1.85fr 1fr 1fr;
+  grid-template-rows: 190px 190px;
   gap: 16px;
-  align-items: start;
+  width: 100%;
+  height: 396px;
 }
 
-/* VirtualMuseumBanner (1440 x 387) */
+.home-explore-collage .artwork-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.home-explore-collage .artwork-card:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.home-explore-collage .artwork-card:nth-child(2) {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+.home-explore-collage .artwork-card:nth-child(3) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.home-explore-collage .artwork-card:nth-child(4) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.home-explore-collage .artwork-card-image-wrapper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset !important;
+}
+
+.home-explore-collage .artwork-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-explore-collage .artwork-card:nth-child(3) .artwork-card-info,
+.home-explore-collage .artwork-card:nth-child(4) .artwork-card-info {
+  padding: 10px 12px;
+}
+
+.home-explore-collage .artwork-card:nth-child(3) .artwork-card-title,
+.home-explore-collage .artwork-card:nth-child(4) .artwork-card-title {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.home-explore-collage .artwork-card:nth-child(3) .artwork-card-year,
+.home-explore-collage .artwork-card:nth-child(4) .artwork-card-year {
+  font-size: 11px;
+}
+
+/* --- Bloco 2.4: Home - Banner Museu Virtual (HomePage.jsx) --- */
 .home-museum-banner {
   background-color: var(--color-surface-charcoal);
   background-image: linear-gradient(
       90deg,
-      rgba(13, 13, 11, 0.88) 0%,
-      rgba(13, 13, 11, 0.65) 100%
+      rgba(13, 13, 11, 0.85) 0%,
+      rgba(13, 13, 11, 0.45) 100%
     ),
-    url("https://images.unsplash.com/photo-1554907984-15263bfd63bd?auto=format&fit=crop&w=1600&q=80");
+    url("/img/banner-museu-virtual.png");
   background-size: cover;
   background-position: center;
   padding: 56px 89px;
@@ -295,7 +395,7 @@
   margin-bottom: 32px;
 }
 
-/* FeaturedArtists Section (1440 x 700, fill #EDEAE6) */
+/* --- Bloco 2.5: Home - Artistas em Destaque (HomePage.jsx) --- */
 .home-featured-artists {
   background-color: var(--color-surface-secondary);
   padding: 56px 89px 72px;
@@ -322,59 +422,213 @@
   color: var(--color-text-primary);
 }
 
-/* --------------------------------------------------------------------------
-   3. ARTISTS LIST PAGE - Frame Figma 52:331 (.artists-page-*)
-   -------------------------------------------------------------------------- */
+.home-featured-artists .container {
+  max-width: 1262px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.artist-card.home-featured {
+  width: 410px;
+  max-width: 100%;
+  height: 410px;
+  max-height: 410px;
+}
+
+.artist-card.home-featured .artist-card-wrapper {
+  height: 235px;
+}
+
+.artist-card.home-compact {
+  width: 280px;
+  max-width: 100%;
+  height: 410px;
+  max-height: 410px;
+}
+
+.artist-card.home-compact .artist-card-wrapper {
+  height: 185px;
+}
+
+/* ==========================================================================
+   BLOCO 3: PAGINA DE ARTISTAS (ArtistsPage.jsx | Rota: "/artistas")
+   Prefixo de classes da pagina: .artists-*
+   ========================================================================== */
 .artists-page {
   width: 100%;
   background-color: var(--color-surface-secondary);
   min-height: 100vh;
 }
 
+/* --- Bloco 3.1: Artistas - Hero (ArtistsPage.jsx) --- */
+.artists-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 98px);
+  box-sizing: border-box;
+  background-color: var(--color-surface-charcoal);
+  background-image: linear-gradient(
+      90deg,
+      rgba(13, 13, 11, 0.9) 0%,
+      rgba(13, 13, 11, 0.65) 48%,
+      rgba(13, 13, 11, 0.2) 100%
+    ),
+    url("/img/hero-artists.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 120px 89px 48px;
+}
+
+.artists-hero-content {
+  max-width: 580px;
+}
+
+.artists-hero-eyebrow {
+  display: block;
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+}
+
+.artists-hero-headline {
+  font-family: var(--font-serif-display);
+  font-size: 59px;
+  font-weight: 400;
+  line-height: 63px;
+  color: var(--color-text-inverse);
+  margin-bottom: 20px;
+}
+
+.artists-hero-subtitle {
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 490px;
+  margin-bottom: 36px;
+}
+
+/* --- Bloco 3.2: Artistas - Faixa Branca de Busca (ArtistsPage.jsx) --- */
 .artists-search-band {
-  max-width: 1296px;
-  margin: 0 auto;
-  padding: 28px 30px;
+  width: 100%;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 28px max(48px, calc((100% - 1280px) / 2));
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  box-sizing: border-box;
+  scroll-margin-top: 104px;
 }
 
 .artists-search-label {
   font-family: var(--font-serif-display);
   font-size: 30px;
   font-weight: 400;
-  line-height: 32.1px;
+  line-height: 34px;
   color: var(--color-text-primary);
+  margin: 0;
 }
 
+.artists-search-band .search-container {
+  flex: 1 1 420px;
+  max-width: 680px;
+}
+
+/* --- Bloco 3.3: Artistas - Faixa Preta de Temas (ArtistsPage.jsx) --- */
 .artists-theme-band {
   width: 100%;
   background-color: var(--color-surface-ink);
-  padding: 30px 72px;
+  padding: 28px 56px;
+  scroll-margin-top: 104px;
+}
+
+.artists-theme-container {
+  max-width: 1120px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px 24px;
+  gap: 14px 28px;
 }
 
+.artists-theme-band .filter-tag {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+  font-size: 16px;
+}
+
+.artists-theme-band .filter-tag:hover {
+  color: var(--color-accent-primary);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.artists-theme-band .filter-tag.active {
+  color: var(--color-text-primary);
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+/* --- Bloco 3.4: Artistas - Mosaico em Grid 16 Colunas (ArtistsPage.jsx) --- */
 .artists-grid-section {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 36px 30px 72px;
+  width: 100%;
+  background-color: var(--color-surface-secondary);
+  padding: 48px max(40px, calc((100% - 1360px) / 2)) 80px;
+  box-sizing: border-box;
 }
 
-/* --------------------------------------------------------------------------
-   4. ARTIST DETAIL PAGE - Frame Figma 52:338 (.artist-detail-*)
-   -------------------------------------------------------------------------- */
+.artists-cards-mosaic {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.artists-cards-mosaic .artist-card.artist-featured {
+  grid-column: span 6;
+  width: 100%;
+  height: 461px;
+  max-height: 461px;
+}
+
+.artists-cards-mosaic .artist-card.artist-featured .artist-card-wrapper {
+  height: 290px;
+}
+
+.artists-cards-mosaic .artist-card.artist-compact {
+  grid-column: span 4;
+  width: 100%;
+  height: 461px;
+  max-height: 461px;
+}
+
+.artists-cards-mosaic .artist-card.artist-compact .artist-card-wrapper {
+  height: 214px;
+}
+
+/* ==========================================================================
+   BLOCO 4: PAGINA DETALHE DO ARTISTA (ArtistDetailPage.jsx | Rota: "/artistas/:id")
+   Prefixo de classes da pagina: .artist-*
+   ========================================================================== */
 .artist-detail-page {
   width: 100%;
   background-color: var(--color-surface-artist);
 }
 
-/* ArtistProfileHero (1440 x 644, fill #EDEAE6) */
+/* --- Bloco 4.1: Detalhe do Artista - Hero de Perfil e Metricas --- */
 .artist-profile-hero {
   background-color: var(--color-surface-secondary);
   min-height: 644px;
@@ -436,7 +690,6 @@
   margin-bottom: 32px;
 }
 
-/* Barra de Metricas do Artista (81 Obras | 5 Exposicoes | 10 Murais) */
 .artist-metrics-bar {
   display: flex;
   align-items: center;
@@ -488,7 +741,7 @@
   display: block;
 }
 
-/* ArtistTimeLine (1440 x 602, fill #000000) */
+/* --- Bloco 4.2: Detalhe do Artista - Linha do Tempo --- */
 .artist-timeline-section {
   background-color: var(--color-surface-ink);
   color: var(--color-text-inverse);
@@ -558,7 +811,7 @@
   color: var(--color-text-inverse);
 }
 
-/* GalleryArtworkSection (fill #EBECE4) */
+/* --- Bloco 4.3: Detalhe do Artista - Galeria de Obras (Mosaico em 3 Colunas) --- */
 .artist-gallery-section {
   background-color: var(--color-surface-artist);
   max-width: 1362px;
@@ -566,90 +819,59 @@
   padding: 56px 35px 80px;
 }
 
-.artist-gallery-title {
-  font-family: var(--font-serif-display);
-  font-size: 38px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  margin-bottom: 32px;
-}
-
-/* Mosaico / Colagem de obras igual ao Figma */
 .artist-gallery-grid {
   columns: 3 320px;
   column-gap: 48px;
 }
-.artist-gallery-grid {
+
+.artist-gallery-grid .artwork-card {
   break-inside: avoid;
   margin-bottom: 48px;
   width: 100%;
 }
-.artist-gallery-grid .artwork-card-image.retrato,
-.artist-gallery-grid .artwork-card-image.paisagem {
-  max-width: 100%;
-  max-height: none;
-  width: 100%;
-  height: 100%;
-}
 
-/* Garante que o ArtworkCard seja 100% responsivo em todas as paginas */
-.artwork-card {
-  width: 100%;
-  display: block;
-}
-
-.artwork-card-image-wrapper {
-  width: 100%;
-  display: block;
-}
-
-.artwork-card-image,
-.artwork-card-image.retrato,
-.artwork-card-image.paisagem {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: cover;
-  display: block;
-}
-
-/* --------------------------------------------------------------------------
-   5. ARTWORK DETAIL PAGE - Frame Figma 52:341 (.artwork-*)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 5: PAGINA DETALHE DA OBRA (ArtworkPage.jsx | Rota: "/obras/:id")
+   Prefixo de classes da pagina: .artwork-*
+   ========================================================================== */
 .artwork-detail-page {
   width: 100%;
   background-color: var(--color-surface-default);
 }
 
-/* Bloco 1: ArtworkStage (Fundo #16191E, imagem 899x993 com radius 29px) */
+/* --- Bloco 5.1: Detalhe da Obra - Palco da Obra Redimensionavel --- */
 .artwork-stage-section {
   background-color: var(--color-surface-charcoal);
   padding: 48px 24px 0;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
+
 .artwork-stage-frame {
-  max-width: 899px;
-  width: 100%;
+  width: fit-content;
+  max-width: min(899px, 90vw);
+  height: auto;
   border-radius: 29px;
   overflow: hidden;
-  background-color: var(--color-surface-ink);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+  background-color: transparent;
   transform: translateY(56px);
 }
 
 .artwork-stage-image {
-  width: 100%;
-  max-height: 820px;
+  width: auto;
+  max-width: min(899px, 90vw);
+  height: auto;
+  max-height: 760px;
   object-fit: contain;
   display: block;
-  background-color: var(--color-surface-ink);
+  border-radius: 29px;
+  background-color: transparent;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
 }
 
-/* Bloco 2: ArtworkDetails (Fundo #EBECE4, padding lateral 89px) */
+/* --- Bloco 5.2: Detalhe da Obra - Ficha Tecnica e Botoes de Acao --- */
 .artwork-info-section {
   background-color: var(--color-surface-artist);
   padding: 114px 89px 64px;
@@ -670,7 +892,6 @@
   max-width: 775px;
 }
 
-/* Boitata Crespo: Jomolhari 66px */
 .artwork-title {
   font-family: var(--font-serif-display);
   font-size: 66px;
@@ -680,7 +901,6 @@
   margin-bottom: 4px;
 }
 
-/* 1973: Inclusive Sans 27px weight 500 */
 .artwork-year {
   font-family: var(--font-sans-primary);
   font-size: 27px;
@@ -690,7 +910,6 @@
   margin-bottom: 24px;
 }
 
-/* Franklin Joaquin Cascaes: Jomolhari 37px */
 .artwork-artist-name {
   font-family: var(--font-serif-display);
   font-size: 37px;
@@ -710,7 +929,6 @@
   color: var(--color-accent-primary);
 }
 
-/* Tecnica & Dimensoes: Inclusive Sans 20px line-height 24px */
 .artwork-meta-text {
   font-family: var(--font-sans-primary);
   font-size: 20px;
@@ -719,7 +937,6 @@
   color: var(--color-text-primary);
 }
 
-/* Resumo: Inclusive Sans 20px line-height 24px */
 .artwork-summary {
   font-family: var(--font-sans-primary);
   font-size: 20px;
@@ -729,7 +946,6 @@
   margin-top: 28px;
 }
 
-/* Coluna de Botoes (341 x 58, radius 10px, fill #FD7659, text #000000 22px) */
 .artwork-actions-column {
   display: flex;
   flex-direction: column;
@@ -754,7 +970,9 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .artwork-action-btn:hover {
@@ -795,16 +1013,16 @@
   width: 100%;
 }
 
-/* Bloco 3: ExploreMore (Fundo #F3F2EE, titulo Jomolhari 66px) */
+/* --- Bloco 5.3: Detalhe da Obra - Explore Mais (Mosaico Compacto 12 Colunas) --- */
 .artwork-explore-section {
   background-color: var(--color-surface-work-detail);
-  padding: 70px 0 80px;
+  padding: 56px 0 80px;
 }
 
 .artwork-explore-header {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 89px 36px;
+  padding: 0 56px 28px;
 }
 
 .artwork-explore-title {
@@ -819,22 +1037,217 @@
   border: none;
   border-top: 1px solid var(--color-divider-section);
   width: 100%;
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 .artwork-explore-grid {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 49px 24px;
+  padding: 24px 42px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-/* --------------------------------------------------------------------------
-   6. PLACES, VIRTUAL MUSEUM, ABOUT & NOT FOUND (.places-*, .virtual-museum-*)
-   -------------------------------------------------------------------------- */
+.artwork-explore-item-group {
+  display: contents;
+}
+
+.artwork-explore-row-divider {
+  grid-column: 1 / -1;
+  border: none;
+  border-top: 1px solid var(--color-divider-section);
+  width: calc(100% + 84px);
+  margin: 4px -42px;
+}
+
+.artwork-explore-grid .artwork-card {
+  height: 236px;
+  border-radius: 2px;
+  box-shadow: none;
+  background-color: #dedad0;
+}
+
+.artwork-explore-grid .artwork-card.explore-compact {
+  grid-column: span 2;
+}
+
+.artwork-explore-grid .artwork-card.explore-featured {
+  grid-column: span 3;
+}
+
+.artwork-explore-grid .artwork-card-image-wrapper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset !important;
+  background-color: #dedad0;
+}
+
+.artwork-explore-grid .artwork-card-image,
+.artwork-explore-grid .artwork-card-image.explore-compact,
+.artwork-explore-grid .artwork-card-image.explore-featured {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.artwork-explore-grid .artwork-card-info {
+  padding: 12px 14px;
+}
+
+.artwork-explore-grid .artwork-card-title {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.artwork-explore-grid .artwork-card-artist {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.artwork-explore-grid .artwork-card-year {
+  font-size: 11px;
+}
+
+@media (max-width: 1024px) {
+  .artwork-explore-grid {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 20px 24px;
+  }
+
+  .artwork-explore-row-divider {
+    width: calc(100% + 48px);
+    margin: 4px -24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .artwork-explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artwork-explore-grid .artwork-card.explore-compact,
+  .artwork-explore-grid .artwork-card.explore-featured {
+    grid-column: span 1;
+  }
+}
+
+/* ==========================================================================
+   BLOCO 6: PAGINA MUSEU VIRTUAL 360 (VirtualMuseumPage.jsx | Rota: "/museu-virtual")
+   Prefixo de classes da pagina: .virtual-museum-*
+   ========================================================================== */
+.virtual-museum-page {
+  background-color: var(--color-surface-charcoal);
+  min-height: 100vh;
+  padding: 20px 40px 32px;
+  color: var(--color-text-inverse);
+  display: flex;
+  flex-direction: column;
+}
+
+.virtual-museum-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.virtual-museum-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.virtual-museum-brand {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.virtual-museum-heading {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 24px;
+}
+
+.virtual-museum-title {
+  font-family: var(--font-serif-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-text-inverse);
+}
+
+.virtual-museum-subtitle {
+  font-family: var(--font-sans-primary);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.virtual-museum-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.virtual-museum-actions .home-cta-btn {
+  height: 48px;
+  min-width: 190px;
+  font-size: 17px;
+}
+
+.virtual-museum-frame-wrapper {
+  width: 100%;
+  flex: 1;
+  min-height: 78vh;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--color-surface-ink);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+
+.virtual-museum-iframe {
+  width: 100%;
+  height: 78vh;
+  border: none;
+  display: block;
+}
+
+/* ==========================================================================
+   BLOCO 7: PAGINA SOBRE (AboutPage.jsx | Rota: "/sobre")
+   Prefixo de classes da pagina: .about-*
+   ========================================================================== */
+.about-page {
+  background-color: var(--color-surface-work-detail);
+  min-height: 80vh;
+  padding: 72px 89px;
+}
+
+.about-container {
+  max-width: 1262px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-family: var(--font-serif-display);
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+/* ==========================================================================
+   BLOCO 8: PAGINA LUGARES (PlacesPage.jsx | Rota: "/lugares")
+   Prefixo de classes da pagina: .places-*, .place-card-*
+   ========================================================================== */
 .places-page {
   background-color: var(--color-surface-secondary);
   min-height: 85vh;
@@ -940,123 +1353,13 @@
   margin-bottom: 4px;
 }
 
-.virtual-museum-page {
-  background-color: var(--color-surface-charcoal);
-  min-height: calc(100vh - 104px);
-  padding: 32px 48px;
-  color: var(--color-text-inverse);
-}
-
-.virtual-museum-container {
-  max-width: 1344px;
-  margin: 0 auto;
-}
-
-.virtual-museum-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.virtual-museum-title {
-  font-family: var(--font-serif-display);
-  font-size: 38px;
-  font-weight: 400;
-  color: var(--color-text-inverse);
-}
-
-.virtual-museum-subtitle {
-  font-family: var(--font-sans-primary);
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.virtual-museum-frame-wrapper {
-  width: 100%;
-  height: 76vh;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: var(--color-surface-ink);
-}
-
-.virtual-museum-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
-.about-page {
-  background-color: var(--color-surface-work-detail);
-  min-height: 80vh;
-  padding: 72px 89px;
-}
-
-.about-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.about-title {
-  font-family: var(--font-serif-display);
-  font-size: 52px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  margin-bottom: 24px;
-}
-
-.about-lead {
-  font-family: var(--font-sans-primary);
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--color-text-primary);
-  margin-bottom: 20px;
-}
-
-.about-paragraph {
-  font-family: var(--font-sans-primary);
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-text-primary);
-  margin-bottom: 36px;
-}
-
-.about-partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--gap-lg);
-  margin-bottom: 40px;
-}
-
-.about-partner-card {
-  padding: 28px;
-  background-color: var(--color-surface-default);
-  border-radius: 10px;
-  border: 1px solid var(--color-divider-metrics);
-}
-
-.about-partner-title {
-  font-family: var(--font-serif-display);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  margin-bottom: 10px;
-}
-
-.about-partner-desc {
-  font-family: var(--font-sans-primary);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-text-primary);
-}
-
+/* ==========================================================================
+   BLOCO 9: PAGINA 404 (NotFoundPage.jsx | Rota: "*")
+   Prefixo de classes da pagina: .not-found-*
+   ========================================================================== */
 .not-found-page {
   min-height: 70vh;
-  background-color: var(--color-surface-secondary);
+  background-color: var(--color-surface-default);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1089,11 +1392,12 @@
   margin-bottom: 28px;
 }
 
-/* --------------------------------------------------------------------------
-   7. RESPONSIVIDADE (TABLET & MOBILE)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   BLOCO 10: RESPONSIVIDADE GLOBAL DAS PAGINAS (TABLET & MOBILE)
+   ========================================================================== */
 @media (max-width: 1024px) {
-  .artist-profile-hero {
+  .artist-profile-hero,
+  .home-explore-container {
     grid-template-columns: 1fr;
   }
 
@@ -1101,13 +1405,14 @@
     padding: 48px 24px;
   }
 
-  .home-explore-container {
-    grid-template-columns: 1fr;
-  }
-
   .home-stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+  }
+
+  .artists-cards-mosaic .artist-card.artist-featured,
+  .artists-cards-mosaic .artist-card.artist-compact {
+    grid-column: span 8;
   }
 }
 
@@ -1117,16 +1422,18 @@
   .home-explore-section,
   .home-museum-banner,
   .home-featured-artists,
+  .artists-hero-section,
   .artist-timeline-section,
   .artwork-info-section,
   .artwork-explore-header,
-  .places-page,
-  .about-page {
+  .about-page,
+  .places-page {
     padding-left: 24px;
     padding-right: 24px;
   }
 
   .home-hero-headline,
+  .artists-hero-headline,
   .artist-profile-name,
   .artwork-title,
   .artwork-explore-title {
@@ -1134,7 +1441,10 @@
     line-height: 1.15;
   }
 
-  .artwork-actions-column {
+  .artwork-actions-column,
+  .artists-cards-mosaic .artist-card.artist-featured,
+  .artists-cards-mosaic .artist-card.artist-compact {
     width: 100%;
+    grid-column: span 16;
   }
 }

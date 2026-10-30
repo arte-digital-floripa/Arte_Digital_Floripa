@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useArtwork } from "../hooks/useArtworks";
-import ArtworkStage from "../components/sections/artwork-detail/ArtworkStage";
 import ArtworkCard from "../components/cards/ArtworkCard/ArtworkCard";
 
 export default function ArtworkPage() {
@@ -32,6 +31,7 @@ export default function ArtworkPage() {
 
   const artistName = artist?.name || artist?.nome || "Artista do Acervo";
   const summaryText =
+    artwork.description ||
     artwork.descricao ||
     artist?.bio ||
     artist?.biografia ||
@@ -39,10 +39,21 @@ export default function ArtworkPage() {
 
   return (
     <div className="artwork-detail-page">
-      {/* BLOCO 1: Componente ArtworkStage*/}
-      <ArtworkStage artwork={artwork} />
+            {/* BLOCO 1: Palco da Obra direto na página */}
+      <section className="artwork-stage-section">
+        <div className="artwork-stage-frame">
+          <img
+            src={
+              artwork.remote_url ||
+              "https://placehold.co/900x700/16191E/FFFFFF?text=Obra+Indisponivel"
+            }
+            alt={title}
+            className="artwork-stage-image"
+          />
+        </div>
+      </section>
 
-      {/* BLOCO 2: ArtworkDetails */}
+      {/* BLOCO 2: Detalhes da obra */}
       <section className="artwork-info-section">
         <div className="artwork-info-container">
           <div className="artwork-info-details">
@@ -144,23 +155,28 @@ export default function ArtworkPage() {
           </p>
         ) : (
           <div className="artwork-explore-grid">
-            {relatedArtworks.map((relWork) => {
-              const variant =
-                relWork.largura &&
-                relWork.altura &&
-                relWork.largura > relWork.altura
-                  ? "paisagem"
-                  : "retrato";
+            {relatedArtworks.map((relWork, index) => {
+              // Ciclo de 11 obras em grid de 12 colunas:
+              // Linha 1 (pos 0..5): 6 compactos (6 x span 2 = 12 cols)
+              // Linha 2 (pos 6..10): 1 compacto (2) + 2 largos (3+3) + 2 compactos (2+2) = 12 cols
+              const pos = index % 11;
+              const isWide = pos === 7 || pos === 8;
+              const variant = isWide ? "explore-featured" : "explore-compact";
+              const isRowEnd =
+                (pos === 5 || pos === 10) &&
+                index < relatedArtworks.length - 1;
 
               return (
-                <ArtworkCard
-                  key={relWork.id}
-                  artwork={{
-                    ...relWork,
-                    artist: artistName,
-                    variant,
-                  }}
-                />
+                <div key={relWork.id} className="artwork-explore-item-group">
+                  <ArtworkCard
+                    artwork={{
+                      ...relWork,
+                      artist: artistName,
+                      variant,
+                    }}
+                  />
+                  {isRowEnd && <hr className="artwork-explore-row-divider" />}
+                </div>
               );
             })}
           </div>
