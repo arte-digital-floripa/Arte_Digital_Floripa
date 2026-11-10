@@ -1,0 +1,721 @@
+/* ==========================================================================
+   ARTE DIGITAL FLORIPA - ESTILOS DOS COMPONENTES REUTILIZAVEIS (components.css)
+   Organizado por Bloco de Componente e mapeado para as paginas onde e usado
+   ========================================================================== */
+
+/* ==========================================================================
+   BLOCO 1: COMPONENTE BUTTON (Button.jsx)
+   Usado em: AboutPage.jsx, NotFoundPage.jsx
+   Classes: .btn, .btn-compact, .btn-primary, .btn-outline, .btn-dark
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 14px 28px;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.btn-compact {
+  min-width: 254px;
+  height: 64px;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-navigation-active);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-divider-section);
+  color: var(--color-text-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.btn-dark {
+  min-width: 254px;
+  height: 64px;
+  background-color: var(--color-surface-charcoal);
+  color: var(--color-surface-default);
+}
+
+.btn-dark:hover {
+  background-color: var(--color-surface-ink);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   BLOCO 2: COMPONENTE FILTER TAG (FilterTag.jsx)
+   Usado em: ArtistsPage.jsx (Faixa de filtros por tema)
+   Classes: .filter-tag, .filter-tag.active
+   ========================================================================== */
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  padding: 8px 22px;
+  font-family: var(--font-sans-primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background-color: transparent;
+  border: 1px solid var(--color-divider-metrics);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-tag:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.filter-tag.active {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+/* ==========================================================================
+   BLOCO 3: COMPONENTE SEARCH INPUT (SearchInput.jsx)
+   Usado em: ArtistsPage.jsx (Faixa de busca de artistas)
+   Classes: .search-container, .search-input, .search-submit-btn
+   ========================================================================== */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 742px;
+  height: 42px;
+  background-color: #d9d9d9;
+  border: 1.5px solid #16191e;
+  border-radius: 18.5px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.search-container:focus-within {
+  border-color: var(--color-accent-primary);
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  padding: 0 22px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans-primary);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.search-input::placeholder {
+  color: rgba(22, 25, 30, 0.65);
+}
+
+.search-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 100%;
+  background-color: var(--color-surface-charcoal);
+  color: var(--color-surface-default);
+  border: none;
+  border-radius: 0 16px 16px 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+  background-color: var(--color-navigation-active);
+}
+
+/* ==========================================================================
+   BLOCO 4: COMPONENTE HEADER / NAVBAR (Header.jsx)
+   Usado em: MainLayout.jsx (Topo global e VirtualMuseumPage.jsx)
+   Classes: .navbar-header, .navbar-container, .brand-lockup, .brand-logo,
+            .brand-title-top, .brand-title-bottom, .nav-links-list, .nav-item-link
+   ========================================================================== */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--color-surface-charcoal);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 95%;
+  height: 104px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-lockup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brand-logo-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  height: 92px;
+  width: auto;
+  display: block;
+}
+
+.brand-title-wrapper {
+  white-space: nowrap;
+}
+
+.brand-title-top,
+.brand-title-bottom,
+.nav-item-link {
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.brand-title-top {
+  font-family: var(--font-sans-support);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.brand-title-bottom {
+  font-family: var(--font-sans-support);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.5px;
+  text-transform: uppercase;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.nav-links-list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item-link {
+  position: relative;
+  font-family: var(--font-sans-primary);
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-item-link:hover {
+  color: var(--color-accent-primary);
+}
+
+.nav-item-link.active {
+  color: var(--color-navigation-active);
+  font-weight: 500;
+}
+
+.nav-item-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-navigation-active);
+  border-radius: 2px;
+}
+
+@media (max-width: 960px) {
+  .nav-links-list {
+    gap: 22px;
+  }
+
+  .nav-item-link {
+    font-size: 17px;
+  }
+
+  .brand-logo {
+    height: 76px;
+  }
+
+  .brand-title-top {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .brand-title-bottom {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-header.menu-open {
+    background-color: rgba(22, 25, 30, 0.98) !important;
+  }
+
+  .navbar-container {
+    max-width: 100%;
+    padding: 0 16px;
+    height: 72px;
+    position: relative;
+  }
+
+  .brand-lockup {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    height: 54px;
+  }
+
+  .brand-title-top {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .brand-title-bottom {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links-list {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 12px 24px 20px;
+    box-sizing: border-box;
+    background-color: rgba(22, 25, 30, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-links-list.open {
+    display: flex;
+  }
+
+  .nav-links-list li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .nav-links-list li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-item-link {
+    display: inline-block;
+    font-size: 18px;
+    padding: 14px 0;
+  }
+}
+
+/* ==========================================================================
+   BLOCO 5: COMPONENTE FOOTER (Footer.jsx)
+   Usado em: MainLayout.jsx (Rodape institucional global)
+   Classes: .footer-global, .footer-container, .footer-slot-brand,
+            .footer-brand-logo, .footer-brand-title, .footer-info-container,
+            .footer-info-divisor, .footer-brand-desc, .footer-slot-partner,
+            .footer-slot-social, .footer-text, .muted
+   ========================================================================== */
+.footer-global {
+  width: 100%;
+  min-height: 104px;
+  background-color: var(--color-surface-charcoal);
+  color: var(--color-surface-default);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 36px;
+  margin: 0 auto;
+}
+
+.footer-slot-brand {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-brand-logo {
+  height: 104px;
+}
+
+.footer-brand-title {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.footer-info-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-info-divisor {
+  height: 50px;
+  border: #8b93a033 solid 0.5px;
+}
+
+.footer-brand-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-slot-social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-text {
+  font-family: var(--font-sans-support);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.muted {
+  color: #8b93a0;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    padding: 20px 24px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 16px;
+    gap: 18px;
+  }
+
+  .footer-brand-logo {
+    height: 64px;
+  }
+
+  .footer-info-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-info-divisor {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   BLOCO 6: COMPONENTE ARTIST CARD (ArtistCard.jsx)
+   Usado em: HomePage.jsx (variantes .home-featured / .home-compact)
+             ArtistsPage.jsx (variantes .artist-featured / .artist-compact)
+   Classes: .artist-card, .artist-card-wrapper, .artist-card-artwork,
+            .artist-card-content, .artist-card-info, .artist-card-name,
+            .artist-card-summary, .artist-card-works
+   ========================================================================== */
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-charcoal);
+  border-radius: 11px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-surface-default);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.artist-card > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.artist-card-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: var(--color-surface-ink);
+  border-radius: 11px 11px 0 0;
+  flex-shrink: 0;
+}
+
+.artist-card-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.artist-card:hover .artist-card-artwork {
+  transform: scale(1.04);
+}
+
+.artist-card-content {
+  padding: 16px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.artist-card-info {
+  min-height: 0;
+}
+
+.artist-card-name {
+  font-family: var(--font-serif-display);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-card-summary.artist-summary-featured,
+.artist-card-summary.home-summary-featured {
+  font-family: var(--font-sans-support);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.artist-card-summary.artist-summary-compact,
+.artist-card-summary.home-summary-compact {
+  font-family: var(--font-sans-support);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.artist-card-works {
+  font-family: var(--font-sans-support);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   BLOCO 7: COMPONENTE ARTWORK CARD (ArtworkCard.jsx)
+   Usado em: HomePage.jsx (Seção Explore o Acervo),
+             ArtistDetailPage.jsx (Galeria de Obras do Artista),
+             ArtworkPage.jsx (Seção Explore Mais)
+   Classes: .artwork-card, .artwork-card-image-wrapper, .artwork-card-image,
+            .artwork-card-info, .artwork-card-title, .artwork-card-artist,
+            .artwork-card-year
+   ========================================================================== */
+.artwork-card {
+  width: 100%;
+  display: block;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-discover-card);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.artwork-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.artwork-card-image-wrapper {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  background-color: var(--color-surface-work-detail);
+}
+
+.artwork-card-image,
+.artwork-card-image.retrato,
+.artwork-card-image.paisagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.artwork-card:hover .artwork-card-image {
+  transform: scale(1.03);
+}
+
+.artwork-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--color-surface-charcoal);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artwork-card:hover .artwork-card-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.artwork-card-title {
+  font-family: var(--font-serif-display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+}
+
+.artwork-card-artist {
+  font-family: var(--font-sans-support);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 4px 0;
+}
+
+.artwork-card-year {
+  font-family: var(--font-sans-support);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}

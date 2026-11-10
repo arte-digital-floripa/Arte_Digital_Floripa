@@ -1,0 +1,20 @@
+# ========================================================
+# ARQUIVO DE CONFIGURAÇÃO E ACESSO AO BANCO DE DADOS
+# ========================================================
+
+# PASSO A PASSO PARA O DESENVOLVEDOR:
+# 1. Copie a string DATABASE_URL abaixo.
+# 2. Insira essa string no arquivo .env.
+# 3. Configure o ORM (Prisma ou TypeORM).
+# 4. As tabelas 'artists' e 'artworks' já existem e possuem dados. Não é necessário rodar migrations.
+
+database:
+  provider: "Supabase (PostgreSQL)"
+  
+  # URL principal de conexão. Use essa string no .env.
+  DATABASE_URL: "postgresql://postgres:gtqAQbZKfhXtqhJ8@db.lavzxxaaxouvkyjytrfn.supabase.co:5432/postgres"
+
+  # Chaves alternativas 
+  SUPABASE_URL: "https://lavzxxaaxouvkyjytrfn.supabase.co"
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxhdnp4eGFheG91dmt5anl0cmZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEyNDA0MTIsImV4cCI6MjEwNjgxNjQxMn0.EYlOS1edOfDp4bP2Z2p-YTUASQZ2bVoKdDlVCF-8gdQ"
+
