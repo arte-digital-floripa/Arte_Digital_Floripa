@@ -1,0 +1,25 @@
+@import "./tokens.css";
+@import "./typography.css";
+@import "./components.css";
+@import "./pages.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  font-family: var(--font-sans-primary);
+  background-color: var(--color-surface-default);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,18 @@
+name: Keep Backend Alive (Ping)
+
+# Este job rodará automaticamente a cada 14 minutos
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  # Permite rodar o job manualmente pelo painel do GitHub se necessário
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping API Health Endpoint
+        run: |
+          # Substitua "URL_DA_SUA_API_AQUI" pela URL real de produção do backend
+          # Exemplo: https://arte-digital-floripa-api.onrender.com/api/health
+          curl -f "URL_DA_SUA_API_AQUI" || echo "Ping falhou ou retornou erro"
